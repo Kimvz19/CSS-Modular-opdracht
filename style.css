@@ -12,14 +12,15 @@
 :root {
 
     /* Fonts */
-    /* --edgeRegular: "Edge Regular", Arial, Helvetica, sans-serif;
-    --edgeRegularRound: "Edge Regular Rounded", Arial, Helvetica, sans-serif;
-    --edgeSemiRound: "Edge Semibold Rounded", Arial, Helvetica, sans-serif;
-    --edgeUltraRound: "Edge Ultrabold Rounded", Arial, Helvetica, sans-serif; */
+    --pixelify-sans: "Pixelify Sans", sans-serif;
+    --pixelify-weight-400: 400;
+    --pixelify-weight-600: 600;
+    --pixelify-weight-900: 900;
 
-    /* Font sizes mobile/small */
-    /* --h1-small: 0.8rem;
-    --p-small: 3rem; */
+
+    /* Font sizes web & mobile */
+    --h1-small: 1.5em;
+    --p-small: 2em;
 
     /* extra options */
     --margin: 0;
@@ -37,13 +38,12 @@
 
 body {
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,53 +52,54 @@ main{
 }
 
 
-section{
+section {
     background-color: var(--turquoise);
     width: 100%;
     max-width: 360px;
     height: 600px;
-    position: relative;
-
     border-radius: 15px;
     box-shadow: 0px 0px 6px var(--dark-grey);
-    
+    z-index: 2;
 }
 
-section ul{
-    position: absolute;
-    top: 0;
+section h2{
+    display: none;
 }
 
-section ul li{
+ul {
     display: flex;
     flex-direction: row;
+    gap: 7.6em;
+    margin-top: -620px;
+    background-color: blue;
 }
 
-section li:nth-of-type(1){
+ul li:nth-of-type(1) {
     background-color: var(--light-grey);
-    padding: 2em;
+    padding: .5em;
     border-radius: 54px 102px 200px 81px;
     -webkit-border-radius: 54px 102px 200px 81px;
     -moz-border-radius: 54px 102px 200px 81px;
     margin: 1em;
+    
 }
 
-section li:nth-of-type(2){
+ul li:nth-of-type(2) {
     background-color: var(--light-grey);
-    padding: 2em;
-    border-radius:  102px 54px 81px 200px;
+    padding: .5em;
+    border-radius: 102px 54px 81px 200px;
     -webkit-border-radius: 102px 54px 81px 200px;
     -moz-border-radius: 54px 102px 200px 81px;
     margin: 1em;
 }
 
-h1{
-font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  margin: 50px;
-  text-transform: capitalize;
+h1 {
+    font-family: var(--pixelify-sans);
+    font-optical-sizing: auto;
+    font-size: var(--h1-small);
+    font-weight: var(--pixelify-weight-400);
+    font-style: normal;
+    margin: 50px;
 }
 
 
@@ -109,11 +110,25 @@ font-family: "Pixelify Sans", sans-serif;
 /***************************/
 /* 👩🏻‍💻 Bigger Screen  */
 
-@media (min-width: 820px) {
+@media (min-width: 850px) {
     section {
         max-width: 800px;
         max-height: 350px;
     }
+    
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 475px;
+        margin-top: -380px;
+        background-color: blue;
+    }
+
+    ul li:nth-of-type(1), ul li:nth-of-type(2){
+       padding: 2em;
+    }
+
+   
 }
 
 
@@ -126,4 +141,3 @@ font-family: "Pixelify Sans", sans-serif;
 /****************************/
 /*   🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
 /***************************/
-
