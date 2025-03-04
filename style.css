@@ -110,6 +110,17 @@ h1 {
 }
 
 
+div{
+    background-color: black;
+    width: 21.5em;
+    aspect-ratio: 4/2.5;
+    border-radius: 15px;
+    border: 1px solid rgb(229, 197, 60);
+    border-width: 18px 2.5em;
+    z-index: 3;
+  }
+
+
 @media (min-width: 450px) {
     ul:has(button) {
         margin-top: -60px;
@@ -119,6 +130,7 @@ h1 {
         gap: 8.5em;
 
     }
+
 
 
 }
@@ -146,6 +158,10 @@ h1 {
 
     ul:has(button) button {
         width: 50px;
+    }
+
+    div{
+        width: 30em;
     }
 }
 
