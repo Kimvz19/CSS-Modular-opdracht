@@ -1,8 +1,14 @@
 /****************************/
 /* ✨✨ GENERAL STYLING ✨✨ */
 /***************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
 
-:root {
+body {
 
     /* Fonts */
     --pixelify-sans: "Pixelify Sans", sans-serif;
@@ -23,16 +29,8 @@
     --light-grey: rgb(231 233 234);
     --medium-grey: rgb(185 191 192);
     --dark-grey: rgb(167 174 175);
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-}
 
-body {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -44,61 +42,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vh;
+    margin-top: 50px;
 }
 
-
-section {
-    background-color: var(--yellow);
-    width: 100%;
-    max-width: 355px;
-    height: 600px;
-    border-radius: 15px;
-    box-shadow: 0 0 6px var(--dark-grey);
-    z-index: 2;
-}
-
-section h2 {
-    display: none;
-}
-
-ul:has(h2) {
-    display: flex;
-    flex-direction: row;
-    gap: 10.3em;
-    margin-top: -625px;
-}
-ul:has(h2) li {
-    background-color: var(--light-grey);
-    padding: 0.5em;
-    margin: 1em;
-}
-
-ul:has(h2) li h2{
- color: transparent;
-}
-
-ul:has(h2) li:nth-of-type(1) {
-    border-radius: 54px 102px 200px 81px;
-}
-
-ul:has(h2) li:nth-of-type(2) {
-    border-radius: 102px 54px 81px 200px;
-}
-
-ul:has(button) {
-    display: flex;
-    gap: 40px;
-    margin-top: -87px;
-}
-
-ul:has(button) button {
-    color: transparent;
-    width: 35px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--yellow);
-}
+/* ✨✨ H1 & H2 ✨✨ */
 
 h1 {
     font-family: var(--pixelify-sans);
@@ -109,77 +57,20 @@ h1 {
 
     font-weight: var(--pixelify-weight-400);
     font-style: normal;
-    margin: 10px;
 }
 
 h2 {
-    font-size: calc(1em + 0.75vw);
+    font-size: calc(1em + 0.70vw);
        /* bron van calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
-
 
     font-family: var(--pixelify-sans);
     font-optical-sizing: auto;
     font-weight: var(--pixelify-weight-400);
     font-style: normal;
-    margin: 30px;
+    text-align: center;
+    margin: 20px;
   }
-
-
-div{
-    background-color: black;
-    width: 21.5em;
-    aspect-ratio: 4/2.5;
-    border-radius: 15px;
-    border: 1px solid rgb(229, 197, 60);
-    border-width: 18px 2.5em;
-    z-index: 3;
-  }
-
-
-@media (min-width: 450px) {
-    ul:has(button) {
-        margin-top: -60px;
-    }
-
-    ul:has(h2) {
-        gap: 8.5em;
-
-    }
-
-
-
-}
-
-@media (min-width: 850px) {
-    section {
-        max-width: 800px;
-        max-height: 350px;
-    }
-
-    ul:has(h2) {
-        gap: 475px;
-        margin-top: -380px;
-    }
-
-    ul:has(h2) li {
-        padding: 2em;
-    }
-
-    ul:has(button) {
-        gap: 20px;
-        margin-top: -100px;
-        margin-right: 300px;
-    }
-
-    ul:has(button) button {
-        width: 50px;
-    }
-
-    div{
-        width: 30em;
-    }
-}
 
 
 /****************************/
@@ -190,3 +81,54 @@ div{
 /****************************/
 /*   🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
 /***************************/
+
+
+
+ /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
+ /* Nintendo SWITCH LITE  */
+ /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮  */
+
+.Nintendo {
+    width: 80vw;
+    min-width: 355px;
+    height: 80vh;
+    margin: 15vh auto;
+    background: yellow;
+    border-radius: 15px;
+    opacity: 50%;
+    position: relative;
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 5px;      /* gap tussen de grid columns */
+  }
+  
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 77.5vw;
+    height: 13vw;
+    position: absolute;
+    top: -3.5vh;
+    left: -1.5vw;
+    background-color: gold;
+    place-content: center;
+  }
+  
+  .try1 {
+    background-color: green;
+    width: 10vw; 
+    aspect-ratio: 2 / 1;
+  }
+  
+  .try2 {
+    background-color: pink;
+    width: 10vw; 
+    aspect-ratio: 2 / 1;
+  }
+  
+  @media (min-width: 400px) {
+    .buttons{
+      gap: 65vw;
+    }
+  }
