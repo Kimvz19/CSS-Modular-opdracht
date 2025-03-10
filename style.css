@@ -103,11 +103,27 @@ ul:has(button) button {
 h1 {
     font-family: var(--pixelify-sans);
     font-optical-sizing: auto;
-    font-size: var(--h1-small);
+    font-size: calc(2em + 2vw); 
+   /* bron van calc, codepen over headlines met viewport units
+     https://codepen.io/SitePoint/pen/XMPgdr */
+
     font-weight: var(--pixelify-weight-400);
     font-style: normal;
-    margin: 50px;
+    margin: 10px;
 }
+
+h2 {
+    font-size: calc(1em + 0.75vw);
+       /* bron van calc, codepen over headlines met viewport units
+     https://codepen.io/SitePoint/pen/XMPgdr */
+
+
+    font-family: var(--pixelify-sans);
+    font-optical-sizing: auto;
+    font-weight: var(--pixelify-weight-400);
+    font-style: normal;
+    margin: 30px;
+  }
 
 
 div{
