@@ -17,10 +17,6 @@ body {
     --pixelify-weight-900: 900;
 
 
-    /* Font sizes web & mobile */
-    --h1-small: 1.5em;
-    --p-small: 2em;
-
     /* Colors */
     --black: rgb(0 0 0);
     --white: rgb(255 255 255);
@@ -29,6 +25,10 @@ body {
     --light-grey: rgb(231 233 234);
     --medium-grey: rgb(185 191 192);
     --dark-grey: rgb(167 174 175);
+
+  /* sizing */
+  --
+
 }
 
 main {
@@ -102,6 +102,17 @@ section {
   }
 }
 
+/* Scherm  */
+section div{
+  background-color: black;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  aspect-ratio: 3/2;
+  border-radius: 15px;
+  border: 1px solid rgb(229, 197, 60);
+  border-width: 15px 2em;
+}
+
 
 /****************************/
 /* 🍀🍀  MEDIA QUERIES  🍀🍀 */
@@ -140,7 +151,24 @@ section {
 /* Laat bovenste article zien als 1700px is bereikt van grootte */
 @media (min-width: 1700px) {
   article:nth-of-type(1) {
-    display: block;
+    display: grid;
+    height:min(min(80vh, 40vw), 20em);
+    width:min(min(160vh, 80vw), 40em);
+
+    background-color:orange;
+    
+    grid-template-columns:1fr 2fr 1fr;
+    grid-template-rows:1fr;
+  }
+
+  section {
+    &:nth-of-type(1) {
+      grid-column:unset;
+    }
+    
+    &:nth-of-type(2) {
+      order:-1;
+    }
   }
 }
 
