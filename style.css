@@ -29,12 +29,6 @@ body {
     --light-grey: rgb(231 233 234);
     --medium-grey: rgb(185 191 192);
     --dark-grey: rgb(167 174 175);
-
-
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main {
@@ -42,7 +36,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vh;
     margin-top: 50px;
 }
 
@@ -88,47 +81,73 @@ h2 {
  /* Nintendo SWITCH LITE  */
  /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮  */
 
-.Nintendo {
-    width: 80vw;
-    min-width: 355px;
-    height: 80vh;
-    margin: 15vh auto;
-    background: yellow;
-    border-radius: 15px;
-    opacity: 50%;
-    position: relative;
+ article {
+  height:min( min(80vh, 160vw), 40em);
+  width:min( min(40vh, 80vw), 20em);
+  
+  background-color:pink;
+  
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+
+
+}
+
+section {
+  background-image:linear-gradient(45deg in oklch, hotpink,gold);
+  
+  &:nth-of-type(1) {
+    grid-column:span 2
+  }
+}
+
+
+/****************************/
+/* 🍀🍀  MEDIA QUERIES  🍀🍀 */
+/***************************/
+@media (orientation: landscape) {
+  body {
+    article {
+      height:min(min(80vh, 40vw), 20em);
+      width:min(min(160vh, 80vw), 40em);
+
+      background-color:orange;
+      
+      grid-template-columns:1fr 2fr 1fr;
+      grid-template-rows:1fr;
+    }
     
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 5px;      /* gap tussen de grid columns */
-  }
-  
-  .buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 77.5vw;
-    height: 13vw;
-    position: absolute;
-    top: -3.5vh;
-    left: -1.5vw;
-    background-color: gold;
-    place-content: center;
-  }
-  
-  .try1 {
-    background-color: green;
-    width: 10vw; 
-    aspect-ratio: 2 / 1;
-  }
-  
-  .try2 {
-    background-color: pink;
-    width: 10vw; 
-    aspect-ratio: 2 / 1;
-  }
-  
-  @media (min-width: 400px) {
-    .buttons{
-      gap: 65vw;
+    section {
+      &:nth-of-type(1) {
+        grid-column:unset;
+      }
+      
+      &:nth-of-type(2) {
+        order:-1;
+      }
     }
   }
+}
+
+/* Verbergt de article in portrait & landscape */
+@media (orientation: portrait), (orientation: landscape)  {
+  article:nth-of-type(1){
+    display: none;
+  }
+}
+
+/* Laat bovenste article zien als 1700px is bereikt van grootte */
+@media (min-width: 1700px) {
+  article:nth-of-type(1) {
+    display: block;
+  }
+}
+
+
+
+  
+
+
+
+ 
