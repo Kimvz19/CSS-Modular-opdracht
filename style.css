@@ -166,6 +166,58 @@ section:nth-of-type(2) button:nth-of-type(2){
     /* box-shadow nog fixen */
 }
 
+/* mushroom button */
+
+section:nth-of-type(2) button:nth-of-type(3){
+  height: 10.5vh;
+  color: transparent;
+  position: absolute;
+  right: 2vh;
+  top: 6vh;
+  aspect-ratio: 1;
+  border-radius: 85px;
+  background-color: grey;
+  border: 15px solid lightgrey;
+  box-shadow: 
+  inset 3px -2px 25px rgba(0, 0, 0, 5), 
+   0px 5px 5px rgba(0, 0, 0, 15),
+   2px -2px 5px rgba(0, 0, 0, 15),
+   -2px -4px 5px rgba(0, 0, 0, 15);
+}
+
+section:nth-of-type(2) button:nth-of-type(3)::after{
+  content: "";
+  height: 9.8vh;
+  position: absolute;
+  right: -1.2vh;
+  top: -1.3vh;
+  color: hotpink;
+  aspect-ratio: 1;
+  background: 
+    
+      /* up */
+      linear-gradient(
+        90deg, #000, #0000 20% 80%, #000) 50% 0% / 4% 12%,
+    
+      linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
+    
+      /* left */
+      linear-gradient(#0000 30% 90%, #fff) 0% 50% / 12% 3%,
+      linear-gradient(#000, #0000 30% 70%, #000) 0% 50% / 12% 3%,
+      linear-gradient(90deg, #fff4, #222 10% 50%, #444) 0% 50% / 12% 3%,
+      /* right */
+      linear-gradient(#0000 30% 90%, #fff) 100% 50% / 12% 3%,
+      linear-gradient(#000, #0000 30% 70%, #000) 100% 50% / 12% 3%,
+      linear-gradient(to left, #fff4, #222 10% 50%, #444) 100% 50% / 12% 3%,
+    
+      /* down */
+      linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 100% / 3% 12%,
+      linear-gradient(to top, #fff4, #111 15% 50%, #444) 50% 100% / 3% 12%,
+    
+      #f000;
+  background-repeat: no-repeat;
+}
+
 
 /* Scherm  */
 section div {
