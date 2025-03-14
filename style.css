@@ -133,7 +133,7 @@ section {
     align-items: center;
   }
 
-  & ul{
+  & ul {
     background-color: aqua;
     aspect-ratio: 1/2;
     height: auto;
@@ -142,7 +142,7 @@ section {
 
 /* maakt de headings onzichtbaar */
 article h2,
-section h3{
+section h3 {
   display: none;
 }
 
@@ -164,13 +164,14 @@ section:nth-of-type(1) div {
 
 
 /* general styling van de buttons */
-button{
+button {
   background-color: lightgrey;
 }
 
 /* Min-knop in section 2 */
 section:nth-of-type(2) ul:first-of-type li:first-child button {
-  background-color: red; /* Pas kleur aan */
+  background-color: red;
+  /* Pas kleur aan */
   position: absolute;
   right: 3vh;
   top: 3vh;
@@ -181,7 +182,8 @@ section:nth-of-type(2) ul:first-of-type li:first-child button {
 
 /* Plus-knop in section 3 */
 section:nth-of-type(3) ul:first-of-type li:first-child button {
-  background-color: blue; /* Pas kleur aan */
+  background-color: blue;
+  /* Pas kleur aan */
   color: white;
   font-weight: bold;
   aspect-ratio: 1;
@@ -194,8 +196,8 @@ section:nth-of-type(3) ul:first-of-type li:first-child button {
 }
 
 /* L-knop (eerste button in de tweede section) */
-section:nth-of-type(2) > div > button {
-  background-color: red; 
+section:nth-of-type(2)>div>button {
+  background-color: red;
   color: white;
   border: none;
   padding: 1em;
@@ -206,8 +208,8 @@ section:nth-of-type(2) > div > button {
 }
 
 /* R-knop (eerste button in de derde section) */
-section:nth-of-type(3) > div > button {
-  background-color: blue; 
+section:nth-of-type(3)>div>button {
+  background-color: blue;
   color: white;
   border: none;
   padding: 1em;
@@ -219,7 +221,7 @@ section:nth-of-type(3) > div > button {
 
 /* Mushroom-L knop (tweede button in de eerste <ul> binnen de tweede <section>) */
 section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button {
-  background-color: green; 
+  background-color: green;
   color: white;
   width: 6.5vh;
   height: 6.5vh;
@@ -229,39 +231,52 @@ section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button {
 
 /* Mushroom-R knop (tweede button in de eerste <ul> binnen de derde <section>) */
 section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button {
-  background-color: purple; 
+  background-color: purple;
   color: white;
   width: 6.5vh;
   height: 6.5vh;
   background: blue;
-  border-radius: 50%
+  border-radius: 50%;
+  position: absolute;
+  right: 4.9vh;
+  top: 19vh;
 }
 
 /* Recording-knop (derde button in de eerste <ul> binnen de tweede <section>) */
 section:nth-of-type(2) ul:first-of-type li:nth-of-type(3) button {
-  background-color: red; 
+  background-color: red;
   color: white;
   height: 2vh;
   aspect-ratio: 1;
+  top: 27.5vh;
+  right: 1vh;
+  position: absolute;
 }
 
 /* Home-knop (derde button in de eerste <ul> binnen de derde <section>) */
 section:nth-of-type(3) ul:first-of-type li:nth-of-type(3) button {
-  background-color: blue; 
+  background-color: blue;
   color: black;
   font-weight: bold;
+  top: 27.5vh;
+  right: 11.5vh;
+  position: absolute;
 }
 
-  /* L-knoppen van de richtings knop L*/
+/* L-knoppen van de richtings knop L*/
 section {
   &:nth-of-type(2) {
     ul:nth-of-type(2) {
       background-color: hotpink;
+      height: 8vh;
+      aspect-ratio: 1;
+      clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+
 
 
       li:nth-of-type(1) {
         button {
-          background-color: lightgreen; 
+          background-color: lightgreen;
           color: black;
           font-weight: bold;
         }
@@ -269,7 +284,7 @@ section {
 
       li:nth-of-type(2) {
         button {
-          background-color: lightcoral; 
+          background-color: lightcoral;
           color: white;
           font-weight: bold;
         }
@@ -285,7 +300,7 @@ section {
 
       li:nth-of-type(4) {
         button {
-          background-color: lightyellow; 
+          background-color: lightyellow;
           color: black;
           font-weight: bold;
         }
@@ -295,47 +310,52 @@ section {
 }
 
 
-  /* L-knoppen van de richtings knop L*/
-  section {
-    &:nth-of-type(3) {
-      ul:nth-of-type(2) {
-        background-color: hotpink;
-        
-  
-        li:nth-of-type(1) {
-          button {
-            background-color: lightgreen; 
-            color: black;
-            font-weight: bold;
-          }
+/* R-knoppen van de richtings knop R*/
+section {
+  &:nth-of-type(3) {
+    ul:nth-of-type(2) {
+      background-color: hotpink;
+      height: 8vh;
+      position: absolute;
+      top: 6vh;
+      aspect-ratio: 1;
+      clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+
+
+      li:nth-of-type(1) {
+        button {
+          background-color: lightgreen;
+          color: black;
+          font-weight: bold;
         }
-  
-        li:nth-of-type(2) {
-          button {
-            background-color: lightcoral; 
-            color: white;
-            font-weight: bold;
-          }
+      }
+
+      li:nth-of-type(2) {
+        button {
+          background-color: lightcoral;
+          color: white;
+          font-weight: bold;
         }
-  
-        li:nth-of-type(3) {
-          button {
-            background-color: lightblue;
-            color: black;
-            font-weight: bold;
-          }
+      }
+
+      li:nth-of-type(3) {
+        button {
+          background-color: lightblue;
+          color: black;
+          font-weight: bold;
         }
-  
-        li:nth-of-type(4) {
-          button {
-            background-color: lightyellow; 
-            color: black;
-            font-weight: bold;
-          }
+      }
+
+      li:nth-of-type(4) {
+        button {
+          background-color: lightyellow;
+          color: black;
+          font-weight: bold;
         }
       }
     }
   }
+}
 
 
 
@@ -363,8 +383,8 @@ section {
       }
     }
 
-    section:nth-of-type(3) > div > button,
-    section:nth-of-type(2) > div > button{
+    section:nth-of-type(3)>div>button,
+    section:nth-of-type(2)>div>button {
       top: -1vh;
     }
   }
