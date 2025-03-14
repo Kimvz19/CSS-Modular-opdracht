@@ -273,36 +273,53 @@ section {
       clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
 
 
-
+       /* top button */
       li:nth-of-type(1) {
         button {
           background-color: lightgreen;
           color: black;
           font-weight: bold;
+          position: absolute;
+          right: 7.5vh;
+          top: 19.5vh;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
-
+      /* bottom button */
       li:nth-of-type(2) {
         button {
           background-color: lightcoral;
+          position: absolute;
           color: white;
-          font-weight: bold;
+          bottom: 6.4vh;
+          right: 6.6vh;
+          transform: rotate(180deg);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
-
+       /* right button */
       li:nth-of-type(3) {
         button {
           background-color: lightblue;
           color: black;
-          font-weight: bold;
+          position: absolute;
+          right: 4vh;
+          bottom: 9.5vh;
+          transform: rotate(90deg);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
 
+      /* left button */
       li:nth-of-type(4) {
         button {
           background-color: lightyellow;
           color: black;
-          font-weight: bold;
+          position: absolute;
+          right: 10vh;
+          bottom: 9.5vh;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          transform: rotate(-90deg);
         }
       }
     }
