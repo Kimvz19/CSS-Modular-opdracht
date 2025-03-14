@@ -99,6 +99,7 @@ h2 {
 /*   Nintendo SWITCH LITE    */
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
 
+/* Globale opzet van de nintendo  */
 article {
   height: min(min(80vh, 160vw), 40em);
   width: min(min(40vh, 80vw), 20em);
@@ -117,15 +118,21 @@ section {
   &:nth-of-type(1) {
     grid-column: span 2;
   }
+
+  &:nth-of-type(2),
+  &:nth-of-type(3) {
+    /* background-color: var(--yellow2); */
+    background-color: green;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-section:nth-of-type(2),
-section:nth-of-type(3) {
-  background-color: var(--yellow2);
-  border-radius: 20px;
-  position: relative;
-}
-
+/* maakt de headings onzichtbaar */
 article h2,
 section h3{
   display: none;
@@ -135,7 +142,10 @@ section h3{
 
 /* Scherm  */
 section:nth-of-type(1) div {
-  background-color: black;
+  /* background-color: black; */
+  background-image: url(/images/kirbyBackground.png);
+  background-repeat: none;
+  background-size: cover;
   margin-top: 50px;
   margin-bottom: 30px;
   aspect-ratio: 3/2;
