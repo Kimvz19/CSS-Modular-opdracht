@@ -196,15 +196,17 @@ section:nth-of-type(3) ul:first-of-type li:first-child button {
 }
 
 /* L-knop (eerste button in de tweede section) */
-section:nth-of-type(2)>div>button {
+section:nth-of-type(2) > div > button {
   background-color: red;
   color: white;
   border: none;
   padding: 1em;
-  left: -2vh;
-  top: -33.5vh;
   position: absolute;
   z-index: -1;
+
+  /* Responsieve positionering */
+  left: min(-1vh, -1vw, -1em);
+  top: min(-32.5vh, -30vw, -25em);
 }
 
 /* R-knop (eerste button in de derde section) */
@@ -213,43 +215,50 @@ section:nth-of-type(3)>div>button {
   color: white;
   border: none;
   padding: 1em;
-  right: -2vh;
-  top: -33.5vh;
   position: absolute;
   z-index: -1;
+
+  right: min(-1vh, -1vw, -1em);
+  top: min(-32.5vh, -30vw, -25em);
 }
+
+/* section 3 ul styling voor mushroom R */
+section:nth-of-type(3) ul:first-of-type{
+  display: flex;
+  align-items: flex-end;
+
+}
+
 
 /* Mushroom-L knop (tweede button in de eerste <ul> binnen de tweede <section>) */
 section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button {
-  background-color: green;
   color: white;
-  width: 6.5vh;
-  height: 6.5vh;
   background: red;
-  border-radius: 50%
+  border-radius: 50%;
+  width: min(min(7vh, 10vw), 8em); 
+  height: min(min(7vh, 10vw), 8em);
+  margin-top: 10px;
 }
 
 /* Mushroom-R knop (tweede button in de eerste <ul> binnen de derde <section>) */
 section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button {
-  background-color: purple;
   color: white;
-  width: 6.5vh;
-  height: 6.5vh;
+  width: min(min(7vh, 10vw), 8em); 
+  height: min(min(7vh, 10vw), 8em);
   background: blue;
   border-radius: 50%;
-  position: absolute;
-  right: 4.9vh;
-  top: 19vh;
 }
 
 /* Recording-knop (derde button in de eerste <ul> binnen de tweede <section>) */
 section:nth-of-type(2) ul:first-of-type li:nth-of-type(3) button {
   background-color: red;
   color: white;
-  height: 2vh;
+
+   height: min(min(2vh, 2em), 2em);
+  
   aspect-ratio: 1;
-  top: 27.5vh;
-  right: 1vh;
+  top: min(27vh, 31em);
+  right: min(1.5em, 1.5em);
   position: absolute;
 }
 
@@ -258,53 +267,57 @@ section:nth-of-type(3) ul:first-of-type li:nth-of-type(3) button {
   background-color: blue;
   color: black;
   font-weight: bold;
-  top: 27.5vh;
-  right: 11.5vh;
+  top: min(27.5vh, 26em);
+  right: min(18vh, 8em);
   position: absolute;
 }
 
-/* L-knoppen van de richtings knop L*/
+/* L-knoppen van de richtings knop L */
 section {
   &:nth-of-type(2) {
     ul:nth-of-type(2) {
       background-color: hotpink;
-      height: 8vh;
+      height: 6.2em;
       aspect-ratio: 1;
       clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
 
-
-       /* top button */
+      /* top button */
       li:nth-of-type(1) {
         button {
           background-color: lightgreen;
           color: black;
           font-weight: bold;
           position: absolute;
-          right: 7.5vh;
-          top: 19.5vh;
+       
+          right: 5.4em;  
+          top: 17.5vh;    
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
+
       /* bottom button */
       li:nth-of-type(2) {
         button {
           background-color: lightcoral;
           position: absolute;
           color: white;
-          bottom: 6.4vh;
-          right: 6.6vh;
+
+          bottom: 6vh; 
+          right: 5em;  
           transform: rotate(180deg);
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
-       /* right button */
+
+      /* right button */
       li:nth-of-type(3) {
         button {
           background-color: lightblue;
           color: black;
           position: absolute;
-          right: 4vh;
-          bottom: 9.5vh;
+
+          right: 2.2em;  
+          bottom: 8vh; 
           transform: rotate(90deg);
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
@@ -316,8 +329,9 @@ section {
           background-color: lightyellow;
           color: black;
           position: absolute;
-          right: 10vh;
-          bottom: 9.5vh;
+
+          right: 7.6em;
+          bottom: 6.4em;  
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
           transform: rotate(-90deg);
         }
