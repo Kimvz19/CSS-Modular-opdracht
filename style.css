@@ -113,6 +113,54 @@ button {
   }
 }
 
+@keyframes stepRight {
+  0% {
+    transform: translateX(0);
+  }
+ 
+  100% {
+    transform: translateX(20px);
+  }
+}
+@keyframes stepLeft {
+  0% {
+    transform: translateX(0);
+  }
+ 
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes squish {
+  0% {
+    transform: scale(1, 1); 
+  }
+  25% {
+    transform: scale(.5, 0.1); 
+  }
+  50% {
+    transform: scale(.75, 0.2); 
+  }
+
+  75% {
+    transform: scale(.9, 0.3); 
+  }
+
+  100% {
+    transform: scale(1, 1); 
+  }
+}
+
 
 
 
@@ -230,12 +278,55 @@ section:nth-of-type(1) div::after {
 
 
 /* animatie voor Kirby  */
+/* koppelen aan buttons  */
+
+/* jump animatie  */
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button:active),
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button:focus) {
+  section:nth-of-type(1) div::after {
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* squish animatie  */
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(2) button:active) {
+  section:nth-of-type(1) div::after {
+    animation: squish 1s ease-in-out;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* step rechts animatie  */
 body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(3) button:active),
 body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(3) button:focus) {
   section:nth-of-type(1) div::after {
+    animation: stepRight 1s ease-in-out;
     animation-play-state: running;
   }
 }
+
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button:active),
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button:focus) {
+  section:nth-of-type(1) div::after {
+    animation: stepLeft 1s ease-in-out;
+    animation-play-state: running;
+    animation-fill-mode: forwards; 
+  }
+}
+
+
+/* spin animatie aan mushrooms button */
+body:has(section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button:active),
+body:has(section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button:active) {
+  section:nth-of-type(1) div::after {
+    animation: spin 1s ease-in-out;
+    animation-play-state: running;
+    animation-fill-mode: forwards; 
+  }
+}
+
+
 
 
 
@@ -402,7 +493,7 @@ section:nth-of-type(3) ul:nth-of-type(2) {
   position: absolute;
   top: 6vh;
   aspect-ratio: 1;
-  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+  /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
 }
 
 section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button {
