@@ -43,16 +43,15 @@ main {
 
 h1 {
   font-family: var(--pixelify-sans);
-  font-size: calc(2em + 2vw);
+  font-size: calc(2em + 1.7vw);
   /* bron van calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
-
   font-weight: var(--pixelify-weight-400);
   font-style: normal;
 }
 
 h2 {
-  font-size: calc(1em + 0.70vw);
+  font-size: calc(1em + 0.5vw);
   /* bron van calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
 
@@ -60,7 +59,7 @@ h2 {
   font-weight: var(--pixelify-weight-400);
   font-style: normal;
   text-align: center;
-  margin: 40px;
+  margin: 10px;
 }
 
 /* general styling van de buttons */
@@ -180,9 +179,7 @@ button {
 
 
 .kirby {
-  animation: kirbyPixel 1s infinite;
-  height: 10px;
-  width: 10px;
+  animation: kirbyPixel 3s infinite;
   position: absolute;
   top: 1vh;
   right: 31vw;
@@ -558,7 +555,7 @@ section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button {
 }
 
 /* Laat bovenste article zien als 1700px is bereikt van grootte */
-@media (min-width: 1700px) {
+@media (min-width: 1600px) {
   article:nth-of-type(1) {
     display: grid;
     height: min(min(80vh, 40vw), 20em);
