@@ -86,23 +86,39 @@ h2 {
   }
 }
 
-
-
-/*****************************/
-/*     🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
-/****************************/
-
-
-section:nth-of-type(2):has(> div > button:focus)~section:nth-of-type(1) div::after {
-  background-color: blue !important;
+/* bron code Sanne animatie : https://codepen.io/shooft/pen/RwoGVBp */
+@keyframes jump {
+  0% {
+    transform-origin: right bottom;
+    transform: none;
+  }
+  8% {
+    transform: scale(1.2, .8);
+  }
+  16% {
+    transform: scale(.75, 1.25) translateY(-5em) rotate(15deg); 
+  }
+  24% {
+    transform: scale(1.5, .5);
+  }
+  32% {
+    transform: scale(.9, 1.1);
+  }
+  40%, 50% {
+    transform-origin: left bottom;
+    transform: none;
+  }
 }
 
 
 
 
 
+/*****************************/
+/*     🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
+/****************************/
 
-
+/* animaties toevoegen aan de buttons */
 
 
 
@@ -191,6 +207,7 @@ section:nth-of-type(1) div {
   justify-content: flex-end;
 }
 
+/* Kirby  */
 section:nth-of-type(1) div::after {
   content: "kirby";
   color: blue;
@@ -198,7 +215,25 @@ section:nth-of-type(1) div::after {
   aspect-ratio: 1;
   background-color: aqua;
   margin-bottom: 1.5em;
+
+  animation-name:jump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
+
+button {
+  cursor: pointer;
+}
+
+
+body:has(button:active), body:has(button:focus) {
+  section:nth-of-type(1) div::after {
+    animation-play-state: running;
+  }
+}
+
+
 
 
 /* general styling van de buttons */
