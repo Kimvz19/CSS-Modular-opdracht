@@ -303,6 +303,37 @@ section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(4) {
   grid-row: 4; 
 }
 
+/* richtings button */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1){
+  grid-column: 2;
+  grid-row: 1; 
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2){
+  grid-column: 2;
+  grid-row: 3; 
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3){
+  grid-column: 3;
+  grid-row: 2; 
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4){
+  grid-column: 1;
+  grid-row: 2; 
+}
 
 
 
