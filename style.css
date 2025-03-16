@@ -63,8 +63,11 @@ h2 {
   margin: 40px;
 }
 
-
-
+/* general styling van de buttons */
+button {
+  cursor: pointer;
+  background-color: lightgrey;
+}
 
 /****************************/
 /*  🔑🔑 KEY FRAMES   🔑🔑 */
@@ -210,36 +213,31 @@ section:nth-of-type(1) div {
 /* Kirby  */
 section:nth-of-type(1) div::after {
   content: "kirby";
-  color: blue;
-  height: 1.9em;
+  color: transparent;
+  height: 4em;
   aspect-ratio: 1;
-  background-color: aqua;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
+  background-image: url(/images/kirby-tryout.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
   animation-name:jump;
-  animation-duration: 2s;
+  animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-play-state: paused;
 }
 
-button {
-  cursor: pointer;
-}
 
-
-body:has(button:active), body:has(button:focus) {
+/* animatie voor Kirby  */
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(3) button:active),
+body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(3) button:focus) {
   section:nth-of-type(1) div::after {
     animation-play-state: running;
   }
 }
 
 
-
-
-/* general styling van de buttons */
-button {
-  background-color: lightgrey;
-}
 
 /* Min-knop in section 2 */
 section:nth-of-type(2) ul:first-of-type li:first-child button {
