@@ -72,7 +72,6 @@ button {
 /*  🔑🔑 KEY FRAMES   🔑🔑 */
 /***************************/
 
-/* probleem bij animatie oplossen */
 @keyframes kirbyPixel {
 
   0%,
@@ -174,7 +173,7 @@ button {
 
 
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
-/*      PIXEL KIRBY ICON     */
+/*    PIXEL KIRBY ICON  */
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
 
 
@@ -187,8 +186,36 @@ button {
 }
 
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
-/*   Nintendo SWITCH LITE    */
+/* Nintendo SWITCH LITE */
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
+
+/* L-knop (eerste button in de tweede section) */
+section:nth-of-type(2)>div>button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 1em;
+  position: absolute;
+  z-index: -1;
+
+  /* Responsieve positionering */
+  left: min(-1vh, -1vw, -1em);
+  top: min(-32.5vh, -30vw, -25em);
+}
+
+/* R-knop (eerste button in de derde section) */
+section:nth-of-type(3)>div>button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 1em;
+  position: absolute;
+  z-index: -1;
+
+  right: min(-1vh, -1vw, -1em);
+  top: min(-32.5vh, -30vw, -25em);
+}
+
 
 /* Globale opzet van de nintendo  */
 article {
@@ -213,17 +240,72 @@ section:nth-of-type(3) {
   background-color: green;
   border-radius: 20px;
   position: relative;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-section ul {
+
+/* container query ul */
+section:nth-of-type(2)>ul:nth-of-type(1),
+section:nth-of-type(3)>ul:nth-of-type(1){
+  container-name: containerButtons;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 10px;
   background-color: aqua;
-  aspect-ratio: 1/2;
-  height: auto;
+  width: 150px;
+  height: 300px;
 }
+
+/* positionering buttons in ul  */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(1){
+  grid-column: 2; 
+  grid-row: 1; 
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(1){
+  grid-column: 1; 
+  grid-row: 1; 
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2; 
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2; 
+}
+
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3){
+  grid-column: 1;
+  grid-row: 3; 
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3){
+  grid-column: 2;
+  grid-row: 3; 
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(4) {
+  grid-column: 2;
+  grid-row: 4; 
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 4; 
+}
+
+
+
+
 
 
 /* maakt de headings onzichtbaar */
@@ -321,19 +403,14 @@ body:has(section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button:active
 }
 
 
-
-
+/* Buttons styling */
 
 /* Min-knop in section 2 */
 section:nth-of-type(2) ul:first-of-type li:first-child button {
   background-color: red;
   /* Pas kleur aan */
-  position: absolute;
-  right: 3vh;
-  top: 3vh;
   background-color: grey;
   color: transparent;
-  border-radius: 6px;
 }
 
 /* Plus-knop in section 3 */
@@ -342,48 +419,12 @@ section:nth-of-type(3) ul:first-of-type li:first-child button {
   /* Pas kleur aan */
   color: white;
   font-weight: bold;
-  aspect-ratio: 1;
-  position: absolute;
-  left: 3vh;
-  top: 2.5vh;
+
   background-color: grey;
   color: transparent;
   clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 77%, 35% 77%, 35% 50%, 10% 50%);
 }
 
-/* L-knop (eerste button in de tweede section) */
-section:nth-of-type(2)>div>button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 1em;
-  position: absolute;
-  z-index: -1;
-
-  /* Responsieve positionering */
-  left: min(-1vh, -1vw, -1em);
-  top: min(-32.5vh, -30vw, -25em);
-}
-
-/* R-knop (eerste button in de derde section) */
-section:nth-of-type(3)>div>button {
-  background-color: blue;
-  color: white;
-  border: none;
-  padding: 1em;
-  position: absolute;
-  z-index: -1;
-
-  right: min(-1vh, -1vw, -1em);
-  top: min(-32.5vh, -30vw, -25em);
-}
-
-/* section 3 ul styling voor mushroom R */
-section:nth-of-type(3) ul:first-of-type {
-  display: flex;
-  align-items: flex-end;
-
-}
 
 
 /* Mushroom-L knop (tweede button in de eerste <ul> binnen de tweede <section>) */
@@ -391,16 +432,15 @@ section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button {
   color: white;
   background: red;
   border-radius: 50%;
-  width: min(min(7vh, 10vw), 8em);
-  height: min(min(7vh, 10vw), 8em);
-  margin-top: 10px;
+  /* width: min(min(7vh, 10vw), 8em);
+  height: min(min(7vh, 10vw), 8em); */
 }
 
 /* Mushroom-R knop (tweede button in de eerste <ul> binnen de derde <section>) */
 section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button {
   color: white;
-  width: min(min(7vh, 10vw), 8em);
-  height: min(min(7vh, 10vw), 8em);
+  /* width: min(min(7vh, 10vw), 8em);
+  height: min(min(7vh, 10vw), 8em); */
   background: blue;
   border-radius: 50%;
 }
@@ -409,31 +449,28 @@ section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button {
 section:nth-of-type(2) ul:first-of-type li:nth-of-type(3) button {
   background-color: red;
   color: white;
+  height: 1.5em;
 
-  height: min(min(2vh, 2em), 2em);
-
-  aspect-ratio: 1;
-  top: min(27vh, 31em);
-  right: min(1.5em, 1.5em);
-  position: absolute;
+  /* top: min(30vh, 31em);
+  right: min(1.5em, 1.5em); */
 }
 
 /* Home-knop (derde button in de eerste <ul> binnen de derde <section>) */
 section:nth-of-type(3) ul:first-of-type li:nth-of-type(3) button {
   background-color: blue;
   color: black;
-  font-weight: bold;
-  top: min(27.5vh, 26em);
-  right: min(18vh, 8em);
-  position: absolute;
+  /* right: min(18vh, 8em); */
+  color: white;
+  height: 1.5em;
+  /* top: min(30vh, 31em); */
+
 }
 
 /* L-knoppen van de richtings knop L */
 section:nth-of-type(2) ul:nth-of-type(2) {
   background-color: hotpink;
-  height: 6.2em;
   aspect-ratio: 1;
-  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+  /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
 }
 
 /* top button */
@@ -441,54 +478,54 @@ section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(1) button {
   background-color: lightgreen;
   color: black;
   font-weight: bold;
-  position: absolute;
-  right: 5.4em;
-  top: 17.5vh;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  /* right: 5.4em;
+  top: 17.5vh; */
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 }
 
 /* bottom button */
 section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(2) button {
   background-color: lightcoral;
-  position: absolute;
   color: white;
-  bottom: 6vh;
-  right: 5em;
+  /* bottom: 6vh;
+  right: 5em; */
   transform: rotate(180deg);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 }
 
 /* right button */
 section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(3) button {
   background-color: lightblue;
   color: black;
-  position: absolute;
-  right: 2.2em;
-  bottom: 8vh;
+  /* right: 2.2em;
+  bottom: 8vh; */
   transform: rotate(90deg);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 }
 
 /* left button */
 section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(4) button {
   background-color: lightyellow;
   color: black;
-  position: absolute;
-  right: 7.6em;
-  bottom: 6.4em;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  /* right: 7.6em;
+  bottom: 6.4em; */
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
   transform: rotate(-90deg);
 }
 
 /* R-knoppen van de richtings knop R*/
 section:nth-of-type(3) ul:nth-of-type(2) {
   background-color: hotpink;
-  height: 8vh;
+  /* height: 8vh;
   position: absolute;
-  top: 6vh;
+  top: 6vh; */
   aspect-ratio: 1;
   /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
 }
+
+
+
+
 
 section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button {
   background-color: lightgreen;
@@ -516,7 +553,7 @@ section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button {
 
 
 /******************************/
-/* 🍀🍀  MEDIA QUERIES  🍀🍀 */
+/* 🍀🍀  MEDIA QUERIES  🍀🍀   */
 /*****************************/
 @media (orientation: landscape) {
   body {
