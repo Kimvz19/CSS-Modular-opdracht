@@ -39,6 +39,7 @@ main {
   margin-top: 50px;
 }
 
+/*  Headings styling */
 /* ✨✨ H1 & H2 ✨✨ */
 
 h1 {
@@ -46,6 +47,7 @@ h1 {
   font-size: calc(2em + 1.7vw);
   /* bron van calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
+
   font-weight: var(--pixelify-weight-400);
   font-style: normal;
 }
@@ -59,17 +61,21 @@ h2 {
   font-weight: var(--pixelify-weight-400);
   font-style: normal;
   text-align: center;
+  /* zorgt extra ruimte tussen de tekst en de nintendo  */
   margin: 10px;
 }
 
+
 /* general styling van de buttons */
+/* ✨✨  alle soorten buttons ✨✨ */
+
 button {
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: #D3D3D3;
 }
 
 /****************************/
-/*  🔑🔑 KEY FRAMES   🔑🔑 */
+/*   🔑🔑 KEY FRAMES   🔑🔑  */
 /***************************/
 
 @keyframes kirbyPixel {
@@ -93,19 +99,25 @@ button {
     transform-origin: right bottom;
     transform: none;
   }
+
   8% {
     transform: scale(1.2, .8);
   }
+
   16% {
-    transform: scale(.75, 1.25) translateY(-5em) rotate(15deg); 
+    transform: scale(.75, 1.25) translateY(-5em) rotate(15deg);
   }
+
   24% {
     transform: scale(1.5, .5);
   }
+
   32% {
     transform: scale(.9, 1.1);
   }
-  40%, 50% {
+
+  40%,
+  50% {
     transform-origin: left bottom;
     transform: none;
   }
@@ -115,16 +127,17 @@ button {
   0% {
     transform: translateX(0);
   }
- 
+
   100% {
     transform: translateX(20px);
   }
 }
+
 @keyframes stepLeft {
   0% {
     transform: translateX(0);
   }
- 
+
   100% {
     transform: translateX(-20px);
   }
@@ -134,6 +147,7 @@ button {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -141,27 +155,25 @@ button {
 
 @keyframes squish {
   0% {
-    transform: scale(1, 1); 
+    transform: scale(1, 1);
   }
+
   25% {
-    transform: scale(.5, 0.1); 
+    transform: scale(.5, 0.1);
   }
+
   50% {
-    transform: scale(.75, 0.2); 
+    transform: scale(.75, 0.2);
   }
 
   75% {
-    transform: scale(.9, 0.3); 
+    transform: scale(.9, 0.3);
   }
 
   100% {
-    transform: scale(1, 1); 
+    transform: scale(1, 1);
   }
 }
-
-
-
-
 
 /*****************************/
 /*     🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
@@ -171,11 +183,9 @@ button {
 
 
 
-
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
 /*    PIXEL KIRBY ICON  */
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
-
 
 .kirby {
   animation: kirbyPixel 3s infinite;
@@ -185,42 +195,51 @@ button {
   opacity: 70%;
 }
 
+
+
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
 /* Nintendo SWITCH LITE */
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
 
 /* L-knop (eerste button in de tweede section) */
 section:nth-of-type(2)>div>button {
-  background-color: red;
-  color: white;
+  color: transparent;
   border: none;
   padding: 1em;
   position: absolute;
+  width: 4em;
+  height: 6em;
+  border-radius: 5px;
+  /* staat achter de nintendo */
   z-index: -1;
+  margin-left: -.5em;
+}
 
-  /* Responsieve positionering */
-  left: min(-1vh, -1vw, -1em);
-  top: min(-32.5vh, -30vw, -25em);
+section:nth-of-type(3)>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 /* R-knop (eerste button in de derde section) */
 section:nth-of-type(3)>div>button {
-  background-color: blue;
-  color: white;
+  color: transparent;
   border: none;
   padding: 1em;
-  position: absolute;
-  z-index: -1;
+  border-radius: 5px;
+  width: 4em;
+  height: 6em;
 
-  right: min(-1vh, -1vw, -1em);
-  top: min(-32.5vh, -30vw, -25em);
+  position: absolute;
+  right: -.5em;
+  z-index: -1;
 }
 
 
 /* Globale opzet van de nintendo  */
 article {
   height: min(min(80vh, 160vw), 40em);
-  width: min(min(40vh, 80vw), 20em);
+  width: min(min(45vh, 80vw), 20em);
 
   background-color: var(--yellow2);
   display: grid;
@@ -237,7 +256,7 @@ section:nth-of-type(1) {
 section:nth-of-type(2),
 section:nth-of-type(3) {
   /* background-color: var(--yellow2); */
-  background-color: green;
+  background-color: #F3CD57;
   border-radius: 20px;
   position: relative;
   /* display: flex;
@@ -249,7 +268,7 @@ section:nth-of-type(3) {
 
 /* container query ul */
 section:nth-of-type(2)>ul:nth-of-type(1),
-section:nth-of-type(3)>ul:nth-of-type(1){
+section:nth-of-type(3)>ul:nth-of-type(1) {
   container-name: containerButtons;
   container-type: inline-size;
   display: grid;
@@ -263,77 +282,90 @@ section:nth-of-type(3)>ul:nth-of-type(1){
 }
 
 /* positionering buttons in ul  */
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(1){
-  grid-column: 2; 
-  grid-row: 1; 
-}
-
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(1){
-  grid-column: 1; 
-  grid-row: 1; 
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(2) {
-    grid-column: 1;
-    grid-row: 2; 
-}
-
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(2) {
+/* min button */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
   grid-column: 2;
-  grid-row: 2; 
+  grid-row: 1;
+  padding-top: 10px;
 }
 
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3){
+/* plus button */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
   grid-column: 1;
-  grid-row: 3; 
+  grid-row: 1;
+  padding-top: 10px;
 }
 
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3){
-  grid-column: 2;
-  grid-row: 3; 
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(4) {
-  grid-column: 2;
-  grid-row: 4; 
-}
-
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(4) {
+/* L mushroom */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
   grid-column: 1;
-  grid-row: 4; 
+  grid-row: 2;
+  padding-left: 10px;
 }
+
+/* L mushroom */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  padding-right: 10px;
+}
+
+/* L richtingsbuttons */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) {
+  grid-column: 1;
+  grid-row: 3;
+  padding-left: 10px;
+}
+
+/* R richtingsbuttons */
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
+  grid-column: 2;
+  grid-row: 4;
+  background-color: green;
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 4;
+  padding-left: 10px;
+}
+
 
 /* richtings button */
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul{
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
 
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1){
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1) {
   grid-column: 2;
-  grid-row: 1; 
+  grid-row: 1;
 }
 
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2){
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2) {
   grid-column: 2;
-  grid-row: 3; 
+  grid-row: 3;
 }
 
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3){
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3) {
   grid-column: 3;
-  grid-row: 2; 
+  grid-row: 2;
 }
 
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4){
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) {
   grid-column: 1;
-  grid-row: 2; 
+  grid-row: 2;
 }
 
 
@@ -378,7 +410,7 @@ section:nth-of-type(1) div::after {
   background-size: cover;
 
 
-  animation-name:jump;
+  animation-name: jump;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-play-state: paused;
@@ -419,7 +451,7 @@ body:has(section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button:focus
   section:nth-of-type(1) div::after {
     animation: stepLeft 1s ease-in-out;
     animation-play-state: running;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
   }
 }
 
@@ -430,7 +462,7 @@ body:has(section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button:active
   section:nth-of-type(1) div::after {
     animation: spin 1s ease-in-out;
     animation-play-state: running;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
   }
 }
 
@@ -555,10 +587,6 @@ section:nth-of-type(3) ul:nth-of-type(2) {
   /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
 }
 
-
-
-
-
 section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button {
   background-color: lightgreen;
   color: black;
@@ -613,6 +641,14 @@ section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button {
       top: -1vh;
     }
   }
+
+  section:nth-of-type(2)>div>button {
+    top: 0;
+  }
+
+  section:nth-of-type(3)>div>button {
+    margin-left: 8.3em;
+  }
 }
 
 /* Verbergt de article in portrait & landscape */
@@ -638,9 +674,9 @@ section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button {
   section:nth-of-type(1) {
     grid-column: unset;
   }
-  
+
   section:nth-of-type(2) {
     order: -1;
   }
-  
+
 }
