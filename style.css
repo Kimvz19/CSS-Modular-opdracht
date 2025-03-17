@@ -262,15 +262,26 @@ section:nth-of-type(3) {
 
 
 /* container query ul */
-section:nth-of-type(2)>ul:nth-of-type(1),
-section:nth-of-type(3)>ul:nth-of-type(1) {
+section:nth-of-type(2)>ul:nth-of-type(1) {
   container-name: containerButtons;
   container-type: inline-size;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   padding: 4px;
-  background-color: aqua;
+  width: 150px;
+  height: 300px;
+  margin: auto;
+}
+
+section:nth-of-type(3)>ul:nth-of-type(1)
+{
+  container-name: containerButtons;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 4px;
   width: 150px;
   height: 300px;
   margin: auto;
@@ -428,9 +439,8 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
 
     &::after{
       content: "";
-      width: inherit;
-      height: inherit;
-      left: 3em;
+      width: 100%;
+      height: 100%;
       aspect-ratio: 1;
       position: absolute;
       /* manier om top, left, right, en bottom : 0em  */
@@ -482,8 +492,8 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
 
     &::after{
       content: "";
-      width: inherit;
-      height: inherit;
+      width: 100%;
+      height: 100%;
       left: 3em;
       aspect-ratio: 1;
       position: absolute;
@@ -520,16 +530,16 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
   grid-column: 1;
   grid-row: 3;
-  background-color: green;
-  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+  background-color: grey;
+  clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
 }
 
 /* R richtingsbuttons */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
   grid-column: 2;
   grid-row: 3;
-  background-color: blue;
-  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+  background-color: grey;
+  clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
 }
 
 /* record button */
@@ -538,21 +548,57 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
   grid-row: 4;
 
   button {
-    height: 2em;
-    width: 3em;
+    height: 2em; width: 2em;
     color: transparent;
+    border: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      background: whitesmoke;
+      position: absolute;
+      width: 1.8em;
+      height: 1.8em;
+      border-radius: 50%;
+    
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); 
+    }
   }
 }
 
-/* record button */
+/* home button */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
   grid-column: 1;
   grid-row: 4;
 
   button {
-    height: 2em;
-    width: 3em;
+    height: 2.3em; width: 2.3em;
     color: transparent;
+    border: none;
+    position: relative;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      background: whitesmoke;
+      position: absolute;
+      width: 1.2em;  
+      height: 1.2em; 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      /* Huisvorm */
+      clip-path: polygon(
+        50% 0%,   
+        100% 40%,
+        100% 100%, 
+        0% 100%,  
+        0% 40%   
+      );
+    }
   }
 }
 
@@ -595,29 +641,40 @@ section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) 
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
   text-align: center;
 
-  /* top bottom */
+  /* top  button */
   li:nth-of-type(1) button {
-    background-color: hotpink;
+   color: transparent;
+   width: 1.5em;
+   margin-top: .2em;
+   aspect-ratio: 1;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
   /* bottom button */
   li:nth-of-type(2) button {
-    background-color: hotpink;
+    color: transparent;
     transform: rotate(180deg);
-    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    width: 1.5em;
+    aspect-ratio: 1;
+    margin-top: .2em;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
   /* right button */
   li:nth-of-type(3) button {
-    background-color: hotpink;
+    color: transparent;
     transform: rotate(90deg);
-    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
   /* left button */
   li:nth-of-type(4) button {
-    background-color: hotpink;
-    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(-90deg);
   }
 }
@@ -628,26 +685,39 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 
   /* top bottom */
   li:nth-of-type(1) button {
-    background-color: hotpink;
+    color: transparent;
+    width: 1.5em;
+    margin-top: .2em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
   /* bottom button */
   li:nth-of-type(2) button {
-    background-color: hotpink;
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    margin-top: .2em;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(180deg);
   }
 
   /* right button */
   li:nth-of-type(3) button {
-    background-color: hotpink;
+    color: transparent;
+   width: 1.5em;
+   aspect-ratio: 1;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(90deg);
     /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
   }
 
   /* left button */
   li:nth-of-type(4) button {
-    background-color: hotpink;
-    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    color: transparent;
+   width: 1.5em;
+   aspect-ratio: 1;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(-90deg);
   }
 }
