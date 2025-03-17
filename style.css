@@ -255,14 +255,9 @@ section:nth-of-type(1) {
 
 section:nth-of-type(2),
 section:nth-of-type(3) {
-  /* background-color: var(--yellow2); */
-  background-color: #F3CD57;
+  background-color: var(--yellow2);
   border-radius: 20px;
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 
@@ -281,103 +276,12 @@ section:nth-of-type(3)>ul:nth-of-type(1) {
   margin: auto;
 }
 
-/* positionering buttons in ul  */
-/* min button */
-section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
-  grid-column: 2;
-  grid-row: 1;
-  padding-top: 10px;
-}
-
-/* plus button */
-section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
-  grid-column: 1;
-  grid-row: 1;
-  padding-top: 10px;
-}
-
-/* L mushroom */
-section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
-  grid-column: 1;
-  grid-row: 2;
-  padding-left: 10px;
-}
-
-/* L mushroom */
-section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
-  grid-column: 2;
-  grid-row: 2;
-  padding-right: 10px;
-}
-
-/* L richtingsbuttons */
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) {
-  grid-column: 1;
-  grid-row: 3;
-  padding-left: 10px;
-}
-
-/* R richtingsbuttons */
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
-  grid-column: 2;
-  grid-row: 4;
-  background-color: green;
-}
-
-section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
-  grid-column: 1;
-  grid-row: 4;
-  padding-left: 10px;
-}
-
-
-/* richtings button */
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-
-
-
 
 /* maakt de headings onzichtbaar */
 article h2,
 section h3 {
   display: none;
 }
-
 
 /* Scherm */
 section:nth-of-type(1) div {
@@ -469,146 +373,283 @@ body:has(section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button:active
 
 /* Buttons styling */
 
-/* Min-knop in section 2 */
-section:nth-of-type(2) ul:first-of-type li:first-child button {
-  background-color: red;
-  /* Pas kleur aan */
-  background-color: grey;
-  color: transparent;
+
+/* positionering buttons in ul  */
+/* min button */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 10px;
+
+  button {
+    color: transparent;
+    border-radius: 6px;
+    width: 2.4em;
+    height: 1em;
+    border: none;
+    box-shadow: 0px 0px 1px rgba(230, 204, 204, .75),
+      inset 4px 4px 5px rgba(255, 255, 255, .5),
+      inset -4px -4px 5px rgba(26, 0, 0, .5)
+  }
 }
 
-/* Plus-knop in section 3 */
-section:nth-of-type(3) ul:first-of-type li:first-child button {
+/* plus button */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 10px;
+
+  button {
+    color: transparent;
+    width: 2em;
+    height: 2em;
+    clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 77%, 35% 77%, 35% 50%, 10% 50%);
+    border: none;
+    box-shadow: 0px 0px 1px rgba(230, 204, 204, .75), inset 13px -1px 5px rgba(255, 255, 255, .5), inset 1px -6px 11px rgba(26, 0, 0, .5)
+  }
+}
+
+/* L mushroom */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+  padding-left: 10px;
+
+  button {
+    color: transparent;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    width: min(min(7vh, 10vw), 8em);
+    height: min(min(7vh, 10vw), 8em);
+    box-shadow:
+    inset -2px -7px 25px rgba(0, 0, 0, 5), 
+    0px 0px 2px rgba(0, 0, 0, 15);
+
+    &::after{
+      content: "";
+      width: inherit;
+      height: inherit;
+      left: 3em;
+      aspect-ratio: 1;
+      position: absolute;
+      /* manier om top, left, right, en bottom : 0em  */
+      inset: 0; 
+      
+      background:
+  
+        /* up */
+        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 0% / 4% 12%,
+    
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
+    
+        /* left */
+        linear-gradient(#0000 30% 90%, #fff) 0% 50% / 12% 3%,
+        linear-gradient(#000, #0000 30% 70%, #000) 0% 50% / 12% 3%,
+        linear-gradient(90deg, #fff4, #222 10% 50%, #444) 0% 50% / 12% 3%,
+        /* right */
+        linear-gradient(#0000 30% 90%, #fff) 100% 50% / 12% 3%,
+        linear-gradient(#000, #0000 30% 70%, #000) 100% 50% / 12% 3%,
+        linear-gradient(to left, #fff4, #222 10% 50%, #444) 100% 50% / 12% 3%,
+    
+        /* down */
+        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 100% / 3% 12%,
+        linear-gradient(to top, #fff4, #111 15% 50%, #444) 50% 100% / 3% 12%,
+    
+        #f000;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+/* R mushroom */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  padding-right: 10px;
+  
+
+  button {
+    color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: min(min(7vh, 10vw), 8em);
+    height: min(min(7vh, 10vw), 8em);
+    position: relative;
+    box-shadow:
+    inset -2px -7px 25px rgba(0, 0, 0, 5), 
+    0px 0px 2px rgba(0, 0, 0, 15);
+
+    &::after{
+      content: "";
+      width: inherit;
+      height: inherit;
+      left: 3em;
+      aspect-ratio: 1;
+      position: absolute;
+      /* manier om top, left, right, en bottom : 0em  */
+      inset: 0; 
+      
+      background:
+  
+        /* up */
+        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 0% / 4% 12%,
+    
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
+    
+        /* left */
+        linear-gradient(#0000 30% 90%, #fff) 0% 50% / 12% 3%,
+        linear-gradient(#000, #0000 30% 70%, #000) 0% 50% / 12% 3%,
+        linear-gradient(90deg, #fff4, #222 10% 50%, #444) 0% 50% / 12% 3%,
+        /* right */
+        linear-gradient(#0000 30% 90%, #fff) 100% 50% / 12% 3%,
+        linear-gradient(#000, #0000 30% 70%, #000) 100% 50% / 12% 3%,
+        linear-gradient(to left, #fff4, #222 10% 50%, #444) 100% 50% / 12% 3%,
+    
+        /* down */
+        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 100% / 3% 12%,
+        linear-gradient(to top, #fff4, #111 15% 50%, #444) 50% 100% / 3% 12%,
+    
+        #f000;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+/* L richtingsbuttons */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  grid-column: 1;
+  grid-row: 3;
+  background-color: green;
+  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+}
+
+/* R richtingsbuttons */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 3;
   background-color: blue;
-  /* Pas kleur aan */
-  color: white;
-  font-weight: bold;
+  clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%);
+}
 
-  background-color: grey;
-  color: transparent;
-  clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 77%, 35% 77%, 35% 50%, 10% 50%);
+/* record button */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
+  grid-column: 2;
+  grid-row: 4;
+
+  button {
+    height: 2em;
+    width: 3em;
+    color: transparent;
+  }
+}
+
+/* record button */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 4;
+
+  button {
+    height: 2em;
+    width: 3em;
+    color: transparent;
+  }
 }
 
 
-
-/* Mushroom-L knop (tweede button in de eerste <ul> binnen de tweede <section>) */
-section:nth-of-type(2) ul:first-of-type li:nth-of-type(2) button {
-  color: white;
-  background: red;
-  border-radius: 50%;
-  /* width: min(min(7vh, 10vw), 8em);
-  height: min(min(7vh, 10vw), 8em); */
+/* Grid placement of de richtingsbuttons */
+/* richtings button */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-/* Mushroom-R knop (tweede button in de eerste <ul> binnen de derde <section>) */
-section:nth-of-type(3) ul:first-of-type li:nth-of-type(2) button {
-  color: white;
-  /* width: min(min(7vh, 10vw), 8em);
-  height: min(min(7vh, 10vw), 8em); */
-  background: blue;
-  border-radius: 50%;
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
 }
 
-/* Recording-knop (derde button in de eerste <ul> binnen de tweede <section>) */
-section:nth-of-type(2) ul:first-of-type li:nth-of-type(3) button {
-  background-color: red;
-  color: white;
-  height: 1.5em;
-
-  /* top: min(30vh, 31em);
-  right: min(1.5em, 1.5em); */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 3;
 }
 
-/* Home-knop (derde button in de eerste <ul> binnen de derde <section>) */
-section:nth-of-type(3) ul:first-of-type li:nth-of-type(3) button {
-  background-color: blue;
-  color: black;
-  /* right: min(18vh, 8em); */
-  color: white;
-  height: 1.5em;
-  /* top: min(30vh, 31em); */
-
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 2;
 }
 
-/* L-knoppen van de richtings knop L */
-section:nth-of-type(2) ul:nth-of-type(2) {
-  background-color: hotpink;
-  aspect-ratio: 1;
-  /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 2;
 }
 
-/* top button */
-section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(1) button {
-  background-color: lightgreen;
-  color: black;
-  font-weight: bold;
-  /* right: 5.4em;
-  top: 17.5vh; */
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+
+/* Richtingsbuttons L */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  text-align: center;
+
+  /* top bottom */
+  li:nth-of-type(1) button {
+    background-color: hotpink;
+  }
+
+  /* bottom button */
+  li:nth-of-type(2) button {
+    background-color: hotpink;
+    transform: rotate(180deg);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  }
+
+  /* right button */
+  li:nth-of-type(3) button {
+    background-color: hotpink;
+    transform: rotate(90deg);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  }
+
+  /* left button */
+  li:nth-of-type(4) button {
+    background-color: hotpink;
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    transform: rotate(-90deg);
+  }
 }
 
-/* bottom button */
-section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(2) button {
-  background-color: lightcoral;
-  color: white;
-  /* bottom: 6vh;
-  right: 5em; */
-  transform: rotate(180deg);
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
-}
+/* Richtingsbuttons R */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  text-align: center;
 
-/* right button */
-section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(3) button {
-  background-color: lightblue;
-  color: black;
-  /* right: 2.2em;
-  bottom: 8vh; */
-  transform: rotate(90deg);
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
-}
+  /* top bottom */
+  li:nth-of-type(1) button {
+    background-color: hotpink;
+  }
 
-/* left button */
-section:nth-of-type(2) ul:nth-of-type(2) li:nth-of-type(4) button {
-  background-color: lightyellow;
-  color: black;
-  /* right: 7.6em;
-  bottom: 6.4em; */
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
-  transform: rotate(-90deg);
-}
+  /* bottom button */
+  li:nth-of-type(2) button {
+    background-color: hotpink;
+    transform: rotate(180deg);
+  }
 
-/* R-knoppen van de richtings knop R*/
-section:nth-of-type(3) ul:nth-of-type(2) {
-  background-color: hotpink;
-  /* height: 8vh;
-  position: absolute;
-  top: 6vh; */
-  aspect-ratio: 1;
-  /* clip-path: polygon(0 30%, 34% 30%, 34% 0, 64% 0, 64% 30%, 100% 30%, 100% 59%, 65% 59%, 65% 100%, 35% 100%, 35% 58%, 0 58%); */
-}
+  /* right button */
+  li:nth-of-type(3) button {
+    background-color: hotpink;
+    transform: rotate(90deg);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  }
 
-section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(1) button {
-  background-color: lightgreen;
-  color: black;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(2) button {
-  background-color: lightcoral;
-  color: white;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(3) button {
-  background-color: lightblue;
-  color: black;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) ul:nth-of-type(2) li:nth-of-type(4) button {
-  background-color: lightyellow;
-  color: black;
-  font-weight: bold;
+  /* left button */
+  li:nth-of-type(4) button {
+    background-color: hotpink;
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    transform: rotate(-90deg);
+  }
 }
 
 
