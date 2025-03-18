@@ -40,7 +40,7 @@
   --aquarium: url('/images/aquariumbackground.png');
   --city: url('/images/citybackground.png');
   --island: url('/images/islandbackground.png');
- 
+
 
   /* color radio buttons */
   --pink: #FBC3C5;
@@ -87,7 +87,7 @@ h1 {
 
 }
 
- /* &:hover {
+/* &:hover {
     transform: scale(1.2, .8);
   } */
 h2 {
@@ -111,6 +111,7 @@ h2 {
 button {
   cursor: pointer;
   background-color: #D3D3D3;
+
   &:hover {
     transform: scale(1.15);
   }
@@ -217,14 +218,16 @@ button {
   }
 }
 
-@keyframes funnyTitle{
+@keyframes funnyTitle {
   0% {
     transform: scale(1);
   }
-  50%{
+
+  50% {
     transform: scale(1.2, .8);
   }
-  100%{
+
+  100% {
     transform: scale(1);
   }
 }
@@ -397,11 +400,10 @@ section:nth-of-type(1) div::after {
   background-repeat: no-repeat;
   background-size: cover;
 
-
-  animation-name: jump;
+  /* animation-name: jump;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
-  animation-play-state: paused;
+  animation-play-state: paused; */
 }
 
 
@@ -410,58 +412,38 @@ section:nth-of-type(1) div::after {
 
 /* jump animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:active,
-  section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:focus,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:active,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:focus) {
-  section:nth-of-type(1) div::after {
-    animation-play-state: running;
-    animation-iteration-count: infinite;
-  }
+  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:active) section:nth-of-type(1) div::after {
+  animation: jump 2.5s ease-in-out;
 }
 
 /* squish animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:active,
-  section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:focus,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:active,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:focus) {
-  section:nth-of-type(1) div::after {
-    animation: squish 1s ease-in-out;
-    animation-iteration-count: infinite;
-  }
+  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:active) section:nth-of-type(1) div::after {
+  animation: squish 1.5s ease-in-out;
 }
+
 
 /* step rechts animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:active,
-  section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:focus,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:active,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:focus) {
-  section:nth-of-type(1) div::after {
-    animation: stepRight 1s ease-in-out;
-    animation-play-state: running;
-  }
+  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:active) section:nth-of-type(1) div::after {
+  animation: stepRight 1s ease-in-out;
+  animation-play-state: running;
 }
 
+/* animatie stap left */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:active,
-  section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:focus,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:active,
-  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:focus) {
-  section:nth-of-type(1) div::after {
-    animation: stepLeft 1s ease-in-out;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-  }
+  section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:active) section:nth-of-type(1) div::after {
+  animation: stepLeft 1s ease-in-out;
+  animation-play-state: running;
 }
+
 
 
 /* spin animatie aan mushrooms button */
 body:has(section:nth-of-type(2) ul:first-of-type>li:nth-of-type(2) button:active),
-body:has(section:nth-of-type(3) ul:first-of-type>li:nth-of-type(2) button:active) {
-  section:nth-of-type(1) div::after {
+body:has(section:nth-of-type(3) ul:first-of-type>li:nth-of-type(2) button:active) section:nth-of-type(1) div::after {
     animation: spin 1s ease-in-out;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
   }
-}
 
 
 /* Buttons styling */
@@ -861,7 +843,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 body>main>section:last-of-type {
   background-color: lightgray;
   height: 12.5em;
-  margin-top: 2em;
+  margin-top: 2.7em;
   background-color: white;
   opacity: 95%;
   border: .3em solid #FF99CC;
@@ -954,7 +936,7 @@ main:has(input[value="purple"]:checked) {
 
 
 /* game uitkiezen  */
-section:nth-of-type(1) div{
+section:nth-of-type(1) div {
   background-image: var(--game-choice);
 }
 
@@ -962,7 +944,7 @@ section:nth-of-type(1) div{
 /* radiobutton kleur uitkiezen */
 article,
 section:nth-of-type(2),
-section:nth-of-type(3){
+section:nth-of-type(3) {
   background: var(--curent-color);
 }
 
