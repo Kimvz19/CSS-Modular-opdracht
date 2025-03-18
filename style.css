@@ -14,6 +14,7 @@
 
 :root {
   /* Fonts */
+  /* bron van de font: https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap */
   --pixelify-sans: "Pixelify Sans", sans-serif;
   --pixelify-weight-400: 400;
 
@@ -32,13 +33,11 @@
   --current-color: var(--yellow2);
   --stickers: url('/images/backgroundStickers.png');
 
-
   /* Backgrounds */
   --game-choice: url('/images/kirbyBackground.png');
   --aquarium: url('/images/aquariumbackground.png');
   --city: url('/images/citybackground.png');
   --island: url('/images/islandbackground.png');
-
 
   /* Radio buttons colors */
   --pink: #FBC3C5;
@@ -474,7 +473,7 @@ section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) 
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
   text-align: center;
 
-  /* top  button */
+  /* Top  button */
   li:nth-of-type(1) button {
     color: transparent;
     width: 1.5em;
@@ -483,7 +482,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
-  /* bottom button */
+  /* Bottom button */
   li:nth-of-type(2) button {
     color: transparent;
     transform: rotate(180deg);
@@ -493,7 +492,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
-  /* right button */
+  /* Right button */
   li:nth-of-type(3) button {
     color: transparent;
     transform: rotate(90deg);
@@ -502,7 +501,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
-  /* left button */
+  /* Left button */
   li:nth-of-type(4) button {
     color: transparent;
     width: 1.5em;
@@ -518,7 +517,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
   text-align: center;
 
-  /* top bottom */
+  /* Top bottom */
   li:nth-of-type(1) button {
     color: transparent;
     width: 1.5em;
@@ -527,7 +526,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 
-  /* bottom button */
+  /* Bottom button */
   li:nth-of-type(2) button {
     color: transparent;
     width: 1.5em;
@@ -537,7 +536,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
     transform: rotate(180deg);
   }
 
-  /* right button */
+  /* Right button */
   li:nth-of-type(3) button {
     color: transparent;
     width: 1.5em;
@@ -547,7 +546,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
     /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
   }
 
-  /* left button */
+  /* Left button */
   li:nth-of-type(4) button {
     color: transparent;
     width: 1.5em;
@@ -556,9 +555,9 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
     transform: rotate(-90deg);
   }
 }
-
-
 /* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+
+
 /* Positionering buttons in ul  */
 /* Min button */
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
@@ -578,7 +577,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
   }
 }
 
-/* plus button */
+/* Plus button */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
   grid-column: 1;
   grid-row: 1;
@@ -666,13 +665,11 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
   }
 }
 
-
 /* R mushroom */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
   grid-column: 2;
   grid-row: 2;
   padding-right: 10px;
-
 
   button {
     color: transparent;
@@ -818,7 +815,6 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
       left: 50%;
       transform: translate(-50%, -50%);
 
-
       clip-path: polygon(50% 0%,
           100% 30%,
           100% 100%,
@@ -836,7 +832,6 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
 /* 💗💗💗💗💗💗💗💗💗💗💗💗💗 */
 /* Customizing Nintendo L */
 /* 💗💗💗💗💗💗💗💗💗💗💗💗💗 */
-
 
 body>main>section:last-of-type {
   background-color: lightgray;
@@ -947,6 +942,7 @@ section:nth-of-type(3) {
 /******************************/
 /* 🍀🍀  MEDIA QUERIES  🍀🍀   */
 /*****************************/
+
 @media (orientation: landscape) {
   body {
     article {
@@ -991,7 +987,7 @@ section:nth-of-type(3) {
   }
 }
 
-/* Laat bovenste article zien als 1700px is bereikt van grootte */
+/* Bovenkant van Nintendo */
 @media (min-width: 1600px) {
   article:nth-of-type(1) {
     display: grid;
