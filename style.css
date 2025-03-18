@@ -59,6 +59,10 @@ h1 {
   font-weight: var(--pixelify-weight-400);
   font-style: normal;
   transition: .5s;
+  background-color: #FF99CC;
+  padding: .1em .3em;
+  border-radius: 50px;
+  color: white;
 
   &:hover {
     transform: scale(1.2, .8);
@@ -204,13 +208,13 @@ button {
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
 /*    PIXEL KIRBY ICON  */
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
-
+/* 
 .kirby {
-  animation: kirbyPixel 3s infinite;
+  animation: kirbyPixel 5s infinite;
   position: absolute;
   top: 1vh;
   right: 31vw;
-}
+} */
 
 
 
