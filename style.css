@@ -1,9 +1,9 @@
-/* Eindproject CSS to the Resue, gemaakt door Kim van Zuilen*/
+/* Eindproject CSS to the Resue, gemaakt door Kim van Zuilen */
 /* Opdracht 1 : Modular control panel 🎮 */
 
 
 /****************************/
-/*  ✨✨ GENERAL STYLING ✨✨*/
+/*  ✨✨ General Styling ✨✨*/
 /***************************/
 * {
   margin: 0;
@@ -16,10 +16,8 @@
   /* Fonts */
   --pixelify-sans: "Pixelify Sans", sans-serif;
   --pixelify-weight-400: 400;
-  --pixelify-weight-600: 600;
-  --pixelify-weight-900: 900;
 
-  /* Hex Colors */
+  /* Hex colors */
   --black: #000000;
   --white: #FFFFFF;
   --yellow: #FFE28B;
@@ -30,12 +28,12 @@
   --dark-grey: #A7AFAF;
   --pink-shade1: #FF99CC;
 
-  /* defaults */
-  --curent-color: var(--yellow2);
+  /* Defaults */
+  --current-color: var(--yellow2);
   --stickers: url('/images/backgroundStickers.png');
 
 
-  /* backgrounds */
+  /* Backgrounds */
   --game-choice: url('/images/kirbyBackground.png');
   --aquarium: url('/images/aquariumbackground.png');
   --city: url('/images/citybackground.png');
@@ -48,6 +46,12 @@
   --purple: #F0C3FB;
   --blue: #C3F4FB;
   --orange: #FBD6C3;
+
+  /* Animations */
+  --animation-speed-fast: 0.5s;
+  --animation-speed-medium: 1s;
+  --animation-speed-slow: 2.5s;
+  --animation-easing: ease-in-out;
 }
 
 main {
@@ -79,7 +83,7 @@ h2 {
 }
 
 h1 {
-  /* bron voor calc, codepen over headlines met viewport units
+  /* Bron voor calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
   font-size: calc(2em + 1.7vw);
   background-color: var(--pink-shade1);
@@ -87,20 +91,26 @@ h1 {
   border-radius: 50px;
   color: var(--white);
 
-  /* animatie funnyTitle */
+  /* Animatie funnyTitle */
   animation: funnyTitle 3s infinite ease-in-out;
 }
 
 h2 {
-  /* bron voor calc, codepen over headlines met viewport units
+  /* Bron voor calc, codepen over headlines met viewport units
      https://codepen.io/SitePoint/pen/XMPgdr */
   font-size: calc(1em + 0.5vw);
   text-align: center;
   margin: 10px;
 }
 
+/* Headings onzichtbaar */
+article h2,
+section h3 {
+  display: none;
+}
+
 /****************************/
-/*      ✨✨ buttons ✨✨    */
+/*      ✨✨ Buttons ✨✨    */
 /***************************/
 
 button {
@@ -114,10 +124,10 @@ button {
 
 
 /****************************/
-/*   🔑🔑 KEY FRAMES   🔑🔑  */
+/*   🔑🔑 Key Frames   🔑🔑  */
 /***************************/
 
-/* animatie voor heading h1 */
+/* Animatie voor heading h1 */
 @keyframes funnyTitle {
 
   0%,
@@ -130,10 +140,10 @@ button {
   }
 }
 
-/* bron inspiratie code van Sanne : https://codepen.io/shooft/pen/RwoGVBp , 
+/* Bron inspiratie code van Sanne : https://codepen.io/shooft/pen/RwoGVBp , 
 de animatie is wel aangepast 😊 */
 
-/* animatie voor kirby springen 🎀 */
+/* Animatie voor kirby springen 🎀 */
 @keyframes jump {
   0% {
     transform-origin: right bottom;
@@ -162,7 +172,7 @@ de animatie is wel aangepast 😊 */
   }
 }
 
-/* animatie voor kirby stap rechts 🎀 */
+/* Animatie voor kirby stap rechts 🎀 */
 @keyframes stepRight {
   0% {
     transform: translateX(0);
@@ -173,7 +183,7 @@ de animatie is wel aangepast 😊 */
   }
 }
 
-/* animatie voor kirby stap links 🎀 */
+/* Animatie voor kirby stap links 🎀 */
 @keyframes stepLeft {
   0% {
     transform: translateX(0);
@@ -184,7 +194,7 @@ de animatie is wel aangepast 😊 */
   }
 }
 
-/* animatie voor kirby rond draaien 🎀 */
+/* Animatie voor kirby rond draaien 🎀 */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -195,7 +205,7 @@ de animatie is wel aangepast 😊 */
   }
 }
 
-/* animatie voor kirby squishen 🎀 */
+/* Animatie voor kirby squishen 🎀 */
 @keyframes squish {
   0% {
     transform: scale(1, 1);
@@ -223,46 +233,45 @@ de animatie is wel aangepast 😊 */
 /*     🙂‍↔️🙂‍↔️ ANIMATIONS   🙂‍↔️🙂‍↔️ */
 /****************************/
 
-/* animaties van buttons */
-/* jump animatie  */
+/* Animaties van buttons */
+/* Jump animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:active,
   section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(1) button:active) section:nth-of-type(1) div::after {
-  animation: jump 2.5s ease-in-out;
+  animation: jump var(--animation-speed-slow) var(--animation-easing);
 }
 
-/* squish animatie  */
+/* Squish animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:active,
   section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(2) button:active) section:nth-of-type(1) div::after {
-  animation: squish 1.5s ease-in-out;
+  animation: squish 1.5s var(--animation-easing);
 }
 
-/* step rechts animatie  */
+/* Step rechts animatie  */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:active,
   section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(3) button:active) section:nth-of-type(1) div::after {
-  animation: stepRight 1s ease-in-out;
+  animation: stepRight var(--animation-speed-medium) var(--animation-easing);
 }
 
-/* animatie stap left */
+/* Animatie stap left */
 body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:active,
   section:nth-of-type(3) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-type(4) button:active) section:nth-of-type(1) div::after {
-  animation: stepLeft 1s ease-in-out;
+  animation: stepLeft var(--animation-speed-medium) var(--animation-easing);
 }
 
-
-/* Animatie spinnen bij het indrukken van de mushroom-L en mushroom-R knoppen */
+/* Animatie spinnen */
 body:has(section:nth-of-type(2) ul:first-of-type>li:nth-of-type(2) button:active,
   section:nth-of-type(3) ul:first-of-type>li:nth-of-type(2) button:active) section:nth-of-type(1) div::after {
-  animation: spin 1s ease-in-out;
+  animation: spin var(--animation-speed-medium) var(--animation-easing);
 }
 
 
-
-
+/************************/
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
 /* Nintendo SWITCH LITE */
 /* 🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮🎮 */
+/************************/
 
-/* L-knop (eerste button in de tweede section) */
+/* L-knop */
 section:nth-of-type(2)>div>button {
   color: transparent;
   border: none;
@@ -271,21 +280,13 @@ section:nth-of-type(2)>div>button {
   width: 4em;
   height: 6em;
   border-radius: 5px;
-  /* staat achter de nintendo */
   z-index: -1;
   margin-left: -.5em;
-
   box-shadow: inset 4px 4px 5px rgba(255, 255, 255, .5),
     inset -4px -4px 5px rgba(0, 0, 51, .5);
 }
 
-section:nth-of-type(3)>div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-/* R-knop (eerste button in de derde section) */
+/* R-knop */
 section:nth-of-type(3)>div>button {
   color: transparent;
   border: none;
@@ -302,11 +303,20 @@ section:nth-of-type(3)>div>button {
     inset 5px -2px 5px rgba(0, 0, 51, .5);
 }
 
+/* Placement button R */
+section:nth-of-type(3)>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
 /* Globale opzet van de nintendo  */
+/* Samen opgezet met Sanne! */
 article {
   height: min(min(80vh, 160vw), 40em);
   width: min(min(45vh, 80vw), 20em);
+
+  /* grid */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -337,9 +347,11 @@ section:nth-of-type(3) {
     inset -3px -1px 4px rgba(0, 0, 51, .5);
 }
 
-
-/* container query ul */
+/****************************/
+/*✨✨ Container Queries ✨✨*/
+/***************************/
 /* Container setup */
+
 section:nth-of-type(2)>ul:nth-of-type(1) {
   container-name: containerButtons1;
   container-type: inline-size;
@@ -351,7 +363,17 @@ section:nth-of-type(2)>ul:nth-of-type(1) {
   margin: auto;
 }
 
-/* Container query */
+section:nth-of-type(3)>ul:nth-of-type(1) {
+  container-name: containerButtons2;
+  container-type: inline-size;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 4px;
+  width: 150px;
+  height: 300px;
+  margin: auto;
+}
+
 @container containerButtons1 (min-width: 200px) {
   section:nth-of-type(2)>ul:nth-of-type(1) {
     display: grid;
@@ -367,36 +389,21 @@ section:nth-of-type(2)>ul:nth-of-type(1) {
 }
 
 
-section:nth-of-type(3)>ul:nth-of-type(1) {
-  container-name: containerButtons2;
-  container-type: inline-size;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  padding: 4px;
-  width: 150px;
-  height: 300px;
-  margin: auto;
-}
+/****************************/
+/* ✨✨  Scherm display ✨✨ */
+/***************************/
 
-
-/* maakt de headings onzichtbaar */
-article h2,
-section h3 {
-  display: none;
-}
-
-/* Scherm */
+/* Screen */
 section:nth-of-type(1) div {
   color: transparent;
   background-size: cover;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin: 50px 5px 30px 5px;
+
   aspect-ratio: 3/2;
   border-radius: 15px;
   border: 1px solid #F6D875;
   border-width: 15px 2em;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -409,28 +416,151 @@ section:nth-of-type(1) div {
     inset 8px 10px 12px 3px rgba(26, 0, 0, .5);
 }
 
-/* Kirby  */
+/* Kirby on screen */
 section:nth-of-type(1) div::after {
   content: "kirby";
   color: transparent;
+
   height: 4em;
   aspect-ratio: 1;
   margin-bottom: 1em;
+
   background-image: url(/images/kirby-tryout.webp);
   background-repeat: no-repeat;
   background-size: cover;
-
-  /* animation-name: jump;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  animation-play-state: paused; */
 }
 
 
-/* Buttons styling */
+/*****************************/
+/*   🎮 Button Stylings   🎮  */
+/*****************************/
 
-/* positionering buttons in ul  */
-/* min button */
+/* Grid placement of de richtingsbuttons */
+/* Richtings button */
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
+section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+/* Richtingsbuttons L */
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  text-align: center;
+
+  /* top  button */
+  li:nth-of-type(1) button {
+    color: transparent;
+    width: 1.5em;
+    margin-top: .2em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  /* bottom button */
+  li:nth-of-type(2) button {
+    color: transparent;
+    transform: rotate(180deg);
+    width: 1.5em;
+    aspect-ratio: 1;
+    margin-top: .2em;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  /* right button */
+  li:nth-of-type(3) button {
+    color: transparent;
+    transform: rotate(90deg);
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  /* left button */
+  li:nth-of-type(4) button {
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(-90deg);
+  }
+}
+
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+/* Richtingsbuttons R */
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
+  text-align: center;
+
+  /* top bottom */
+  li:nth-of-type(1) button {
+    color: transparent;
+    width: 1.5em;
+    margin-top: .2em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  /* bottom button */
+  li:nth-of-type(2) button {
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    margin-top: .2em;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(180deg);
+  }
+
+  /* right button */
+  li:nth-of-type(3) button {
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(90deg);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  }
+
+  /* left button */
+  li:nth-of-type(4) button {
+    color: transparent;
+    width: 1.5em;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(-90deg);
+  }
+}
+
+
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
+/* Positionering buttons in ul  */
+/* Min button */
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(1) {
   grid-column: 2;
   grid-row: 1;
@@ -479,9 +609,11 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
     border: none;
     width: clamp(4em, 7vh, 8em);
     height: clamp(4em, 7vh, 8em);
+
     box-shadow:
       inset 0px 3px 8px rgba(0, 0, 0, 0.3),
       0px 2px 5px rgba(0, 0, 0, 0.15);
+
     background-color: grey;
     transition: transform 0.2s ease-in-out;
 
@@ -497,6 +629,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
       box-shadow:
         inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
         inset 0px 0px 3px rgba(0, 0, 51, .5);
+
       background:
         /* up */
         linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%,
@@ -629,7 +762,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
     inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
 }
 
-/* record button */
+/* Record button */
 section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
   grid-column: 2;
   grid-row: 4;
@@ -660,7 +793,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
   }
 }
 
-/* home button */
+/* Home button */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
   grid-column: 1;
   grid-row: 4;
@@ -696,136 +829,20 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
   }
 }
 
-
-
-/* Grid placement of de richtingsbuttons */
-/* richtings button */
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(1) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(2) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(3) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4),
-section:nth-of-type(3)>ul:nth-of-type(1) li:nth-of-type(3) ul li:nth-of-type(4) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-
-/* Richtingsbuttons L */
-section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
-  text-align: center;
-
-  /* top  button */
-  li:nth-of-type(1) button {
-    color: transparent;
-    width: 1.5em;
-    margin-top: .2em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-
-  /* bottom button */
-  li:nth-of-type(2) button {
-    color: transparent;
-    transform: rotate(180deg);
-    width: 1.5em;
-    aspect-ratio: 1;
-    margin-top: .2em;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-
-  /* right button */
-  li:nth-of-type(3) button {
-    color: transparent;
-    transform: rotate(90deg);
-    width: 1.5em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-
-  /* left button */
-  li:nth-of-type(4) button {
-    color: transparent;
-    width: 1.5em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(-90deg);
-  }
-}
-
-/* Richtingsbuttons R */
-section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
-  text-align: center;
-
-  /* top bottom */
-  li:nth-of-type(1) button {
-    color: transparent;
-    width: 1.5em;
-    margin-top: .2em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-
-  /* bottom button */
-  li:nth-of-type(2) button {
-    color: transparent;
-    width: 1.5em;
-    aspect-ratio: 1;
-    margin-top: .2em;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(180deg);
-  }
-
-  /* right button */
-  li:nth-of-type(3) button {
-    color: transparent;
-    width: 1.5em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(90deg);
-    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
-  }
-
-  /* left button */
-  li:nth-of-type(4) button {
-    color: transparent;
-    width: 1.5em;
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(-90deg);
-  }
-}
+/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */
 
 
 
-/* laatste section van body  */
-/* Customize your Nintendo */
+/* 💗💗💗💗💗💗💗💗💗💗💗💗💗 */
+/* Customizing Nintendo L */
+/* 💗💗💗💗💗💗💗💗💗💗💗💗💗 */
+
+
 body>main>section:last-of-type {
   background-color: lightgray;
   height: 12.5em;
   margin-top: 2.7em;
-  background-color: white;
+  background-color: var(--white);
   opacity: 95%;
   border: .3em solid #FF99CC;
   border-radius: 2em;
@@ -834,16 +851,16 @@ body>main>section:last-of-type {
     background-color: #FF99CC;
     padding: .5em;
     border-radius: 20px;
-    color: white;
+    color: var(--white);
   }
 }
-
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 1em;
   text-align: center;
   font-family: var(--pixelify-sans);
@@ -866,12 +883,12 @@ input {
   margin: .3em;
   cursor: pointer;
 
-  &[value="yellow"]:checked {
-    background-color: var(--yellow2);
-  }
-
   &[value="pink"]:checked {
     background-color: var(--pink);
+  }
+
+  &[value="yellow"]:checked {
+    background-color: var(--yellow2);
   }
 
   &[value="green"]:checked {
@@ -891,16 +908,16 @@ input {
   }
 }
 
-/* changing custom propertie color Nintendo  */
+/* Choose color Nintendo  */
 main:has(input[value="yellow"]:checked) {
-  --curent-color: var(--yellow2);
+  --current-color: var(--yellow2);
 }
 
 main:has(input[value="pink"]:checked) {
-  --curent-color: var(--stickers);
+  --current-color: var(--stickers);
 }
 
-/* changing custom propertie game Nintendo  */
+/* Choose game Nintendo  */
 main:has(input[value="orange"]:checked) {
   --game-choice: var(--aquarium);
 }
@@ -914,20 +931,18 @@ main:has(input[value="purple"]:checked) {
 }
 
 
-
-
-/* game uitkiezen  */
+/* Game uitkiezen  */
 section:nth-of-type(1) div {
   background-image: var(--game-choice);
 }
 
-
-/* radiobutton kleur uitkiezen */
+/* Radiobutton kleur uitkiezen */
 article,
 section:nth-of-type(2),
 section:nth-of-type(3) {
-  background: var(--curent-color);
+  background: var(--current-color);
 }
+
 
 /******************************/
 /* 🍀🍀  MEDIA QUERIES  🍀🍀   */
@@ -980,7 +995,7 @@ section:nth-of-type(3) {
 @media (min-width: 1600px) {
   article:nth-of-type(1) {
     display: grid;
-    background-color: var(--curent-color);
+    background-color: var(--current-color);
     height: min(min(80vh, 40vw), 20em);
     width: min(min(160vh, 80vw), 40em);
 
