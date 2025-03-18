@@ -39,6 +39,14 @@ main {
   margin-top: 50px;
 }
 
+body{
+  background-image: url(/images/Kirby_background2.png);
+  background-size: cover;
+  height: 120vh;
+  background-repeat: no-repeat;
+
+}
+
 /*  Headings styling */
 /* ✨✨ H1 & H2 ✨✨ */
 
@@ -79,8 +87,11 @@ h2 {
 button {
   cursor: pointer;
   background-color: #D3D3D3;
-}
-
+  
+   &:hover {
+      transform: scale(1.15);
+    }
+  }
 /****************************/
 /*   🔑🔑 KEY FRAMES   🔑🔑  */
 /***************************/
@@ -199,7 +210,6 @@ button {
   position: absolute;
   top: 1vh;
   right: 31vw;
-  opacity: 70%;
 }
 
 
@@ -262,8 +272,11 @@ article {
   position: relative;
   transition: .2s;
 
-  box-shadow: inset 4px 4px 5px rgba(255, 255, 255, .5),
-    inset -4px -4px 5px rgba(0, 0, 51, .5);
+  /* box-shadow: inset 4px 4px 5px rgba(255, 255, 255, .5),
+    inset -4px -4px 5px rgba(0, 0, 51, .5); */
+
+    box-shadow: inset 4px -8px 14px rgba(255, 255, 255, .5),
+    inset 3px -2px 4px rgba(0, 0, 51, .5);
 }
 
 section:nth-of-type(1) {
@@ -324,7 +337,6 @@ section:nth-of-type(1) div {
   /* background-color: black; */
   background-image: url(/images/kirbyBackground.png);
   color: transparent;
-  background-repeat: no-repeat;
   background-size: cover;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -414,7 +426,6 @@ body:has(section:nth-of-type(2) ul:nth-of-type(1) li:nth-of-type(3) li:nth-of-ty
 
 
 /* spin animatie aan mushrooms button */
-
 body:has(section:nth-of-type(2) ul:first-of-type>li:nth-of-type(2) button:active),
 body:has(section:nth-of-type(3) ul:first-of-type>li:nth-of-type(2) button:active) {
   section:nth-of-type(1) div::after {
@@ -426,7 +437,6 @@ body:has(section:nth-of-type(3) ul:first-of-type>li:nth-of-type(2) button:active
 
 
 /* Buttons styling */
-
 
 /* positionering buttons in ul  */
 /* min button */
@@ -466,7 +476,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
 }
 
 /* L mushroom */
-section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
+section:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) {
   grid-column: 1;
   grid-row: 2;
   padding-left: 10px;
@@ -476,46 +486,62 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
     border-radius: 50%;
     position: relative;
     border: none;
-    width: min(min(7vh, 10vw), 8em);
-    height: min(min(7vh, 10vw), 8em);
-    box-shadow:
-      inset -2px -7px 25px rgba(0, 0, 0, 5),
-      0px 0px 2px rgba(0, 0, 0, 15);
+    width: clamp(4em, 7vh, 8em);
+    height: clamp(4em, 7vh, 8em);
+    box-shadow: 
+      inset 0px 3px 8px rgba(0, 0, 0, 0.3), 
+      0px 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: grey;
+    transition: transform 0.2s ease-in-out;
 
     &::after {
       content: "";
-      width: 100%;
-      height: 100%;
+      width: 95%;
       aspect-ratio: 1;
       position: absolute;
-      /* manier om top, left, right, en bottom : 0em  */
-      inset: 0;
-
-      background:
-
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      box-shadow:
+      inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
+      inset 0px 0px 3px rgba(0, 0, 51, .5);
+      background: 
         /* up */
-        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 0% / 4% 12%,
-
-        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
-
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%, 
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%, 
+        
         /* left */
-        linear-gradient(#0000 30% 90%, #fff) 0% 50% / 12% 3%,
-        linear-gradient(#000, #0000 30% 70%, #000) 0% 50% / 12% 3%,
-        linear-gradient(90deg, #fff4, #222 10% 50%, #444) 0% 50% / 12% 3%,
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%, 
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%, 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%, 
+        
         /* right */
-        linear-gradient(#0000 30% 90%, #fff) 100% 50% / 12% 3%,
-        linear-gradient(#000, #0000 30% 70%, #000) 100% 50% / 12% 3%,
-        linear-gradient(to left, #fff4, #222 10% 50%, #444) 100% 50% / 12% 3%,
-
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%, 
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%, 
+        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%, 
+        
         /* down */
-        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 100% / 3% 12%,
-        linear-gradient(to top, #fff4, #111 15% 50%, #444) 50% 100% / 3% 12%,
-
-        #f000;
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%, 
+        linear-gradient(to top, rgba(255, 255, 255, 0.25), #111 15% 50%, #444) 50% 100% / 3% 12%;
       background-repeat: no-repeat;
+      background-blend-mode: multiply;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 10%;
+      left: 10%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 70%);
+      opacity: 0.3;
     }
   }
 }
+
 
 /* R mushroom */
 section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
@@ -526,47 +552,65 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
 
   button {
     color: transparent;
-    border: none;
     border-radius: 50%;
-    width: min(min(7vh, 10vw), 8em);
-    height: min(min(7vh, 10vw), 8em);
     position: relative;
-    box-shadow:
-      inset -2px -7px 25px rgba(0, 0, 0, 5),
-      0px 0px 2px rgba(0, 0, 0, 15);
+    border: none;
+    width: clamp(4em, 7vh, 8em);
+    height: clamp(4em, 7vh, 8em);
+    box-shadow: 
+      inset 0px 3px 8px rgba(0, 0, 0, 0.3), 
+      0px 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: grey;
+    transition: transform 0.2s ease-in-out;
 
     &::after {
       content: "";
-      width: 100%;
-      height: 100%;
-      left: 3em;
+      width: 95%;
       aspect-ratio: 1;
       position: absolute;
-      /* manier om top, left, right, en bottom : 0em  */
-      inset: 0;
-
-      background:
-
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      box-shadow:
+      inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
+      inset 0px 0px 3px rgba(0, 0, 51, .5);
+      background: 
         /* up */
-        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 0% / 4% 12%,
-
-        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
-
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%, 
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%, 
+        
         /* left */
-        linear-gradient(#0000 30% 90%, #fff) 0% 50% / 12% 3%,
-        linear-gradient(#000, #0000 30% 70%, #000) 0% 50% / 12% 3%,
-        linear-gradient(90deg, #fff4, #222 10% 50%, #444) 0% 50% / 12% 3%,
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%, 
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%, 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%, 
+        
         /* right */
-        linear-gradient(#0000 30% 90%, #fff) 100% 50% / 12% 3%,
-        linear-gradient(#000, #0000 30% 70%, #000) 100% 50% / 12% 3%,
-        linear-gradient(to left, #fff4, #222 10% 50%, #444) 100% 50% / 12% 3%,
-
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%, 
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%, 
+        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%, 
+        
         /* down */
-        linear-gradient(90deg, #000, #0000 20% 80%, #000) 50% 100% / 3% 12%,
-        linear-gradient(to top, #fff4, #111 15% 50%, #444) 50% 100% / 3% 12%,
-
-        #f000;
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%, 
+        linear-gradient(to top, rgba(255, 255, 255, 0.25), #111 15% 50%, #444) 50% 100% / 3% 12%;
       background-repeat: no-repeat;
+      background-blend-mode: multiply;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 10%;
+      left: 10%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 70%);
+      opacity: 0.3;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -576,7 +620,11 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
   grid-column: 1;
   grid-row: 3;
   background-color: grey;
+  border: none;
   clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
+
+  box-shadow:
+  inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
 }
 
 /* R richtingsbuttons */
@@ -585,6 +633,9 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
   grid-row: 3;
   background-color: grey;
   clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
+
+  box-shadow:
+  inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
 }
 
 /* record button */
@@ -598,18 +649,22 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
     color: transparent;
     border: none;
     position: relative;
+    box-shadow:
+    inset 0px 0px 6px 1px rgb(175 175 175 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
 
     &::after {
       content: "";
       background: whitesmoke;
       position: absolute;
-      width: 1.8em;
-      height: 1.8em;
-      border-radius: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 70%;
 
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      box-shadow:
+      inset 1px 1px 6px 3px rgb(122 113 113 / 50%), inset 0px 0px 1px 2px rgb(114 101 101 / 16%);
     }
   }
 }
@@ -626,6 +681,8 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
     border: none;
     position: relative;
     border-radius: 50%;
+    box-shadow:
+    inset 0px 0px 5px 2px rgb(123 120 120 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
 
     &::after {
       content: "";
@@ -637,12 +694,13 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
       left: 50%;
       transform: translate(-50%, -50%);
 
-      /* Huisvorm */
+    
       clip-path: polygon(50% 0%,
-          100% 40%,
+          100% 30%,
           100% 100%,
           0% 100%,
-          0% 40%);
+          0% 30%);
+
     }
   }
 }
