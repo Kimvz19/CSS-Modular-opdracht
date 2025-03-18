@@ -28,8 +28,9 @@
   --light-grey: rgb(231, 233, 234);
   --medium-grey: rgb(185, 191, 192);
   --dark-grey: rgb(167, 174, 175);
-  --pink: #FBC3C5;
   --curent-color: var(--yellow2);
+  --stickers: url('/images/backgroundStickers.png');
+  --pink: #FBC3C5;
 }
 
 
@@ -41,7 +42,7 @@ main {
   margin-top: 50px;
 }
 
-body{
+body {
   background-image: url(/images/Kirby_background2.png);
   background-size: cover;
   height: 120vh;
@@ -93,11 +94,12 @@ h2 {
 button {
   cursor: pointer;
   background-color: #D3D3D3;
-  
-   &:hover {
-      transform: scale(1.15);
-    }
+
+  &:hover {
+    transform: scale(1.15);
   }
+}
+
 /****************************/
 /*   🔑🔑 KEY FRAMES   🔑🔑  */
 /***************************/
@@ -276,16 +278,13 @@ article {
   position: relative;
   transition: .2s;
 
-  /* box-shadow: inset 4px 4px 5px rgba(255, 255, 255, .5),
-    inset -4px -4px 5px rgba(0, 0, 51, .5); */
-
-    box-shadow: inset 4px -8px 14px rgba(255, 255, 255, .5),
+  box-shadow: inset 4px -8px 14px rgba(255, 255, 255, .5),
     inset 3px -2px 4px rgba(0, 0, 51, .5);
 }
 
-
 section:nth-of-type(1) {
   grid-column: span 2;
+  border-radius: 10px;
 }
 
 section:nth-of-type(2) {
@@ -354,10 +353,10 @@ section:nth-of-type(1) div {
   flex-direction: column;
   justify-content: flex-end;
 
-  box-shadow: 
-  1px -1px 5px 1px rgba(230, 204, 204, .75),
-  1px 1px 4px 1px rgba(26, 0, 0, .75), 
-   inset 4px 4px 5px rgba(255, 255, 255, .5),
+  box-shadow:
+    1px -1px 5px 1px rgba(230, 204, 204, .75),
+    1px 1px 4px 1px rgba(26, 0, 0, .75),
+    inset 4px 4px 5px rgba(255, 255, 255, .5),
     inset 8px 10px 12px 3px rgba(26, 0, 0, .5);
 }
 
@@ -473,13 +472,13 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(1) {
     clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 77%, 35% 77%, 35% 50%, 10% 50%);
     border: none;
     box-shadow:
-    inset 10px 7px 5px rgba(255, 255, 255, .5),
-    inset -9px -16px 7px rgba(0, 0, 51, .5);
+      inset 10px 7px 5px rgba(255, 255, 255, .5),
+      inset -9px -16px 7px rgba(0, 0, 51, .5);
   }
 }
 
 /* L mushroom */
-section:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) {
+section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(2) {
   grid-column: 1;
   grid-row: 2;
   padding-left: 10px;
@@ -491,8 +490,8 @@ section:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) {
     border: none;
     width: clamp(4em, 7vh, 8em);
     height: clamp(4em, 7vh, 8em);
-    box-shadow: 
-      inset 0px 3px 8px rgba(0, 0, 0, 0.3), 
+    box-shadow:
+      inset 0px 3px 8px rgba(0, 0, 0, 0.3),
       0px 2px 5px rgba(0, 0, 0, 0.15);
     background-color: grey;
     transition: transform 0.2s ease-in-out;
@@ -507,25 +506,25 @@ section:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) {
       transform: translate(-50%, -50%);
       border-radius: 50%;
       box-shadow:
-      inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
-      inset 0px 0px 3px rgba(0, 0, 51, .5);
-      background: 
+        inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
+        inset 0px 0px 3px rgba(0, 0, 51, .5);
+      background:
         /* up */
-        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%, 
-        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%, 
-        
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%,
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
+
         /* left */
-        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%, 
-        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%, 
-        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%, 
-        
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%,
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%,
+
         /* right */
-        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%, 
-        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%, 
-        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%, 
-        
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%,
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%,
+        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%,
+
         /* down */
-        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%, 
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%,
         linear-gradient(to top, rgba(255, 255, 255, 0.25), #111 15% 50%, #444) 50% 100% / 3% 12%;
       background-repeat: no-repeat;
       background-blend-mode: multiply;
@@ -560,8 +559,8 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
     border: none;
     width: clamp(4em, 7vh, 8em);
     height: clamp(4em, 7vh, 8em);
-    box-shadow: 
-      inset 0px 3px 8px rgba(0, 0, 0, 0.3), 
+    box-shadow:
+      inset 0px 3px 8px rgba(0, 0, 0, 0.3),
       0px 2px 5px rgba(0, 0, 0, 0.15);
     background-color: grey;
     transition: transform 0.2s ease-in-out;
@@ -576,25 +575,25 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(2) {
       transform: translate(-50%, -50%);
       border-radius: 50%;
       box-shadow:
-      inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
-      inset 0px 0px 3px rgba(0, 0, 51, .5);
-      background: 
+        inset 0px 0px 1px 8px rgba(255, 255, 255, .5),
+        inset 0px 0px 3px rgba(0, 0, 51, .5);
+      background:
         /* up */
-        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%, 
-        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%, 
-        
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 0 / 3% 12%,
+        linear-gradient(#000 5%, #444 15% 30%, #666 50%, #3c3c3c, #484848) 50% 0 / 3% 12%,
+
         /* left */
-        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%, 
-        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%, 
-        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%, 
-        
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 0% 50% / 12% 3%,
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 0% 50% / 12% 3%,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 0% 50% / 12% 3%,
+
         /* right */
-        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%, 
-        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%, 
-        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%, 
-        
+        linear-gradient(rgba(0, 0, 0, 0) 30% 90%, #fff) 100% 50% / 12% 3%,
+        linear-gradient(#000, rgba(0, 0, 0, 0) 30% 70%, #000) 100% 50% / 12% 3%,
+        linear-gradient(to left, rgba(255, 255, 255, 0.25), #222 10% 50%, #444) 100% 50% / 12% 3%,
+
         /* down */
-        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%, 
+        linear-gradient(90deg, #000, rgba(0, 0, 0, 0) 20% 80%, #000) 50% 100% / 3% 12%,
         linear-gradient(to top, rgba(255, 255, 255, 0.25), #111 15% 50%, #444) 50% 100% / 3% 12%;
       background-repeat: no-repeat;
       background-blend-mode: multiply;
@@ -627,7 +626,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(3) {
   clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
 
   box-shadow:
-  inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
+    inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
 }
 
 /* R richtingsbuttons */
@@ -638,7 +637,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
   clip-path: polygon(0 30%, 32% 30%, 32% 0, 68% 0, 68% 31%, 100% 31%, 100% 62%, 68% 62%, 68% 96%, 32% 96%, 32% 63%, 0 63%);
 
   box-shadow:
-  inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
+    inset 1px -2px 9px 10px rgba(255, 255, 255, .5), inset 1px -6px 20px 9px rgba(0, 0, 51, .5), inset 5px -5px 20px 0px rgba(0, 0, 51, .5)
 }
 
 /* record button */
@@ -653,7 +652,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
     border: none;
     position: relative;
     box-shadow:
-    inset 0px 0px 6px 1px rgb(175 175 175 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
+      inset 0px 0px 6px 1px rgb(175 175 175 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
 
     &::after {
       content: "";
@@ -667,7 +666,7 @@ section:nth-of-type(2)>ul:nth-of-type(1)>li:nth-of-type(4) {
       left: 50%;
       transform: translate(-50%, -50%);
       box-shadow:
-      inset 1px 1px 6px 3px rgb(122 113 113 / 50%), inset 0px 0px 1px 2px rgb(114 101 101 / 16%);
+        inset 1px 1px 6px 3px rgb(122 113 113 / 50%), inset 0px 0px 1px 2px rgb(114 101 101 / 16%);
     }
   }
 }
@@ -685,7 +684,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
     position: relative;
     border-radius: 50%;
     box-shadow:
-    inset 0px 0px 5px 2px rgb(123 120 120 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
+      inset 0px 0px 5px 2px rgb(123 120 120 / 50%), inset 0px 0px 4px 2px rgb(198 198 198);
 
     &::after {
       content: "";
@@ -697,7 +696,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
       left: 50%;
       transform: translate(-50%, -50%);
 
-    
+
       clip-path: polygon(50% 0%,
           100% 30%,
           100% 100%,
@@ -833,57 +832,57 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 
 /* laatste section van body  */
 /* Customize your Nintendo */
-body > main > section:last-of-type {
+body>main>section:last-of-type {
   background-color: lightgray;
-  height: 12em;
+  height: 9em;
   margin-top: 2em;
   background-color: white;
   opacity: 95%;
   border: .3em solid #FF99CC;
   border-radius: 2em;
-  
-  h2{
-  background-color: #FF99CC;
-  padding: .5em;
-  border-radius: 20px;
-  color: white;
+
+  h2 {
+    background-color: #FF99CC;
+    padding: .5em;
+    border-radius: 20px;
+    color: white;
   }
 }
 
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
   text-align: center;
-  font-family: var(--pixelify-sans); ;
+  font-family: var(--pixelify-sans);
 }
 
-fieldset{
-padding: .2em 1.5em;
-border-style: none;
+fieldset {
+  padding: .2em 1.5em;
+  border-style: none;
 }
 
-input{
-  appearance: none; /* Verwijdert de standaard radio-knop */
-    width: 20px;
-    height: 15px;
-    border: 2px solid black;
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: white;
-    cursor: pointer;
+input {
+  appearance: none;
+  width: 20px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: white;
+  cursor: pointer;
 
   &[value="yellow"]:checked {
-      background-color: var(--yellow2);
-    }
+    background-color: var(--yellow2);
+  }
 
   &[value="pink"]:checked {
-      background-color: var(--pink);
-    }
+    background-color: var(--pink);
+  }
 }
 
 main:has(input[value="yellow"]:checked) {
@@ -891,12 +890,14 @@ main:has(input[value="yellow"]:checked) {
 }
 
 main:has(input[value="pink"]:checked) {
-  --curent-color: var(--pink);
+  --curent-color: var(--stickers);
 }
 
 /* radiobutton kleur uitkiezen */
-article, section {
-  background-color: var(--curent-color);
+article,
+section:nth-of-type(2),
+section:nth-of-type(3){
+  background: var(--curent-color);
 }
 
 /******************************/
@@ -950,6 +951,7 @@ article, section {
 @media (min-width: 1600px) {
   article:nth-of-type(1) {
     display: grid;
+    background-color: var(--curent-color);
     height: min(min(80vh, 40vw), 20em);
     width: min(min(160vh, 80vw), 40em);
 
@@ -966,7 +968,7 @@ article, section {
     order: -1;
   }
 
-  body > main > section:last-of-type {
+  body>main>section:last-of-type {
     margin-top: -25em;
     margin-right: -75em;
   }
