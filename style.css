@@ -28,9 +28,26 @@
   --light-grey: rgb(231, 233, 234);
   --medium-grey: rgb(185, 191, 192);
   --dark-grey: rgb(167, 174, 175);
+
+  /* default choice */
   --curent-color: var(--yellow2);
   --stickers: url('/images/backgroundStickers.png');
+
+
+  /* backgrounds game */
+  /* default choice */
+  --game-choice: url('/images/kirbyBackground.png');
+  --aquarium: url('/images/aquariumbackground.png');
+  --city: url('/images/citybackground.png');
+  --island: url('/images/islandbackground.png');
+ 
+
+  /* color radio buttons */
   --pink: #FBC3C5;
+  --green: #C3FBCA;
+  --purple: #F0C3FB;
+  --blue: #C3F4FB;
+  --orange: #FBD6C3;
 }
 
 
@@ -214,7 +231,7 @@ button {
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
 
 /* .kirby {
-  animation: kirbyPixel .9s infinite;
+  animation: kirbyPixel 1s infinite;
   position: absolute;
   top: 1vh;
   right: 31vw;
@@ -336,8 +353,6 @@ section h3 {
 
 /* Scherm */
 section:nth-of-type(1) div {
-  /* background-color: black; */
-  background-image: url(/images/kirbyBackground.png);
   color: transparent;
   background-size: cover;
   margin-top: 50px;
@@ -834,7 +849,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 /* Customize your Nintendo */
 body>main>section:last-of-type {
   background-color: lightgray;
-  height: 9em;
+  height: 12.5em;
   margin-top: 2em;
   background-color: white;
   opacity: 95%;
@@ -874,6 +889,7 @@ input {
   display: inline-block;
   vertical-align: middle;
   background-color: white;
+  margin: .3em;
   cursor: pointer;
 
   &[value="yellow"]:checked {
@@ -883,8 +899,25 @@ input {
   &[value="pink"]:checked {
     background-color: var(--pink);
   }
+
+  &[value="green"]:checked {
+    background-color: var(--green);
+  }
+
+  &[value="purple"]:checked {
+    background-color: var(--purple);
+  }
+
+  &[value="blue"]:checked {
+    background-color: var(--blue);
+  }
+
+  &[value="orange"]:checked {
+    background-color: var(--orange);
+  }
 }
 
+/* changing custom propertie color Nintendo  */
 main:has(input[value="yellow"]:checked) {
   --curent-color: var(--yellow2);
 }
@@ -892,6 +925,28 @@ main:has(input[value="yellow"]:checked) {
 main:has(input[value="pink"]:checked) {
   --curent-color: var(--stickers);
 }
+
+/* changing custom propertie game Nintendo  */
+main:has(input[value="orange"]:checked) {
+  --game-choice: var(--aquarium);
+}
+
+main:has(input[value="blue"]:checked) {
+  --game-choice: var(--city);
+}
+
+main:has(input[value="purple"]:checked) {
+  --game-choice: var(--island);
+}
+
+
+
+
+/* game uitkiezen  */
+section:nth-of-type(1) div{
+  background-image: var(--game-choice);
+}
+
 
 /* radiobutton kleur uitkiezen */
 article,
