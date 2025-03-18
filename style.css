@@ -28,6 +28,8 @@
   --light-grey: rgb(231, 233, 234);
   --medium-grey: rgb(185, 191, 192);
   --dark-grey: rgb(167, 174, 175);
+  --pink: #FBC3C5;
+  --curent-color: var(--yellow2);
 }
 
 
@@ -267,8 +269,6 @@ section:nth-of-type(3)>div>button {
 article {
   height: min(min(80vh, 160vw), 40em);
   width: min(min(45vh, 80vw), 20em);
-
-  background-color: var(--yellow2);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -283,12 +283,12 @@ article {
     inset 3px -2px 4px rgba(0, 0, 51, .5);
 }
 
+
 section:nth-of-type(1) {
   grid-column: span 2;
 }
 
 section:nth-of-type(2) {
-  background-color: var(--yellow2);
   border-radius: 15px 0px 0px 20px;
   position: relative;
   box-shadow: inset 4px -8px 14px rgba(255, 255, 255, .5),
@@ -296,7 +296,6 @@ section:nth-of-type(2) {
 }
 
 section:nth-of-type(3) {
-  background-color: var(--yellow2);
   border-radius: 0px 15px 20px 0px;
   position: relative;
   box-shadow: inset -6px -2px 14px rgba(255, 255, 255, .5),
@@ -710,6 +709,7 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(4) {
 }
 
 
+
 /* Grid placement of de richtingsbuttons */
 /* richtings button */
 section:nth-of-type(2)>ul:nth-of-type(1) li:nth-of-type(3) ul,
@@ -830,6 +830,75 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 }
 
 
+
+/* laatste section van body  */
+/* Customize your Nintendo */
+body > main > section:last-of-type {
+  background-color: lightgray;
+  height: 12em;
+  margin-top: 2em;
+  background-color: white;
+  opacity: 95%;
+  border: .3em solid #FF99CC;
+  border-radius: 2em;
+  
+  h2{
+  background-color: #FF99CC;
+  padding: .5em;
+  border-radius: 20px;
+  color: white;
+  }
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+  font-family: var(--pixelify-sans); ;
+}
+
+fieldset{
+padding: .2em 1.5em;
+border-style: none;
+}
+
+input{
+  appearance: none; /* Verwijdert de standaard radio-knop */
+    width: 20px;
+    height: 15px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+    cursor: pointer;
+
+  &[value="yellow"]:checked {
+      background-color: var(--yellow2);
+    }
+
+  &[value="pink"]:checked {
+      background-color: var(--pink);
+    }
+}
+
+main:has(input[value="yellow"]:checked) {
+  --curent-color: var(--yellow2);
+}
+
+main:has(input[value="pink"]:checked) {
+  --curent-color: var(--pink);
+}
+
+/* radiobutton kleur uitkiezen */
+article, section {
+  background-color: var(--curent-color);
+}
+
 /******************************/
 /* 🍀🍀  MEDIA QUERIES  🍀🍀   */
 /*****************************/
@@ -895,6 +964,11 @@ section:nth-of-type(3)>ul:nth-of-type(1)>li:nth-of-type(3) {
 
   section:nth-of-type(2) {
     order: -1;
+  }
+
+  body > main > section:last-of-type {
+    margin-top: -25em;
+    margin-right: -75em;
   }
 
 }
