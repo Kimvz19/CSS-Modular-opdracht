@@ -212,9 +212,9 @@ button {
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
 /*    PIXEL KIRBY ICON  */
 /* 🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷🩷 */
-/* 
-.kirby {
-  animation: kirbyPixel 5s infinite;
+
+/* .kirby {
+  animation: kirbyPixel .9s infinite;
   position: absolute;
   top: 1vh;
   right: 31vw;
