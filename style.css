@@ -34,10 +34,10 @@
   --stickers: url('/images/backgroundStickers.png');
 
   /* Backgrounds */
-  --game-choice: url('/images/kirbyBackground.png');
-  --aquarium: url('/images/aquariumbackground.png');
-  --city: url('/images/citybackground.png');
-  --island: url('/images/islandbackground.png');
+  --game-choice: url('images/kirbyBackground.png');
+  --aquarium: url('images/aquariumbackground.png');
+  --city: url('images/citybackground.png');
+  --island: url('images/islandbackground.png');
 
   /* Radio buttons colors */
   --pink: #FBC3C5;
@@ -62,7 +62,7 @@ main {
 }
 
 body {
-  background-image: url(/images/Kirby_background2.png);
+  background-image: url('images/Kirby_background2.png');
   background-size: cover;
   height: 120vh;
   background-repeat: no-repeat;
